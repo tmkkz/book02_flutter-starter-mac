@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>バージョン管理ツールasdfのインストール | FlutterでAndroid、iPhoneアプリ開発</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/webstyle.css" />
+    <link rel="next" title="Flutterのインストール" href="05-flutter.html">
+    <link rel="prev" title="Homebrewのインストール" href="03-homebrew.html">
+    <meta name="generator" content="Re:VIEW Starter">
+  </head>
+  <body>
+    <div class="page-outer">
+      <nav class="side-content">
+                <div class="rebuild">
+          <a href="javascript:void(0)" onclick="rebuildAndReloadForcedly()">Rebuild and Reload</a>
+        </div>
+                <a class="nav-title" href="index.html">FlutterでAndroid、iPhoneアプリ開発</a>
+<ul class="toc toc-1">
+    <li class="toc-chapter"><a href="./00-preface.html">はじめに</a></li>
+    <li class="toc-chapter"><a href="./01-whatis.html">1 Flutterとは？</a></li>
+    <li class="toc-chapter"><a href="./02-instraction.html">2 Flutter開発環境の作成手順</a></li>
+    <li class="toc-chapter"><a href="./03-homebrew.html">3 Homebrewのインストール</a></li>
+    <li class="toc-chapter"><a href="./04-asdf.html">4 バージョン管理ツールasdfのインストール</a></li>
+    <li class="toc-chapter"><a href="./05-flutter.html">5 Flutterのインストール</a></li>
+    <li class="toc-chapter"><a href="./06-xcodes.html">6 Xcodeのインストール</a></li>
+    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール</a></li>
+    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPodsのインストール</a></li>
+    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudioのインストール</a></li>
+    <li class="toc-chapter"><a href="./10-commandlinetools.html">10 command-line toolsのインストール</a></li>
+    <li class="toc-chapter"><a href="./11-startproject.html">11 プロジェクトのスタート</a></li>
+</ul>
+      </nav>
+      <div class="page-inner">
+        <header class="page-header">
+        </header>
+        <main class="page-main">
+<h1 id="id_04-asdf" class="boldlines center twolines"><a id="h4"></a><span class="secno">第4章</span> <br/>バージョン管理ツールasdfのインストール</h1>
+<div class="abstract">
+<p>そもそも、バージョン管理ツールとは？、また、なぜ必要なの？</p>
+<p>Flutterもそうですが、Python、Java、Ruby、Node.jsなどのプログラミング言語やフレームワークは日々更新され、ある程度の修正・機能追加が終わった時点で新バージョンとしてリリースされます。</p>
+<p>新バージョンがリリースされる度に開発環境を更新すれば良いのですが、開発中のプロジェクトに影響がないとはいえません。</p>
+<p>また、以前のバージョンで開発したプロジェクトの保守を異なるバージョンの開発環境で行うと、</p>
+<ul>
+<li>動かなくなったり、
+</li>
+<li>使用していたWigdgetなどが非推奨（deprecation）になった。
+</li>
+</ul>
+<p>など、予期せぬことが起こります。</p>
+<p>そのため、</p>
+<ul>
+<li>PC全体で使えるデフォルトバージョンの指定、
+</li>
+<li>プロジェクトフォルダ毎でのバージョンの指定、
+</li>
+</ul>
+<p>ができるように、バージョン管理ツールをインストールします。</p>
+</div>
+<p><a href="https://asdf-vm.com" class="link">asdf本家サイト</a></p>
+<div id="asdf" class="image">
+<img src="images/04-asdf/asdf.png" alt="" class="img width-080per" />
+<p class="caption">
+図4.1: 
+</p>
+</div>
+<p>バージョン管理ツールは、</p>
+<ul>
+<li>Javaのバージョン管理ツール　jenvなど
+</li>
+<li>Rubyのバージョン管理ツール　rbenvなど
+</li>
+<li>pythonのバージョン管理ツール　pyenv、anacondaなど
+</li>
+<li>Node.jsのバージョン管理 nvmなど
+</li>
+</ul>
+<p>プログラミング言語、フレームワーク毎にたくさんあります。</p>
+<p><br /></p>
+<p>Flutterにもバージョン管理ツールとして、「asdf」、「fvm」などがあります。「fvm」は、「flutterコマンド」を直接入力できないので、今回は「asdf」を使います。</p>
+<p><br /></p>
+<p>「asdf」は、flutterだけではなく上記のものや「php」などたくさんのプログラミング言語・フレームワークのバージョン管理が行えます。これは、各プログラミング言語・フレームワークをプラグインとして扱い、asdfにインストールするプラグイン毎にバージョン管理ができるためです。</p>
+<p><br /></p>
+<p>それでは、asdf本体のインストールを行います。asdfのインストールは、Homebrewを使います。</p>
+<p><br /></p>
+<p>ターミナルに「brew install asdf」と入力しエンターキーを押します。</p>
+<div class="cmd-code">
+<span class="caption">asdfのインストール</span>
+<pre class="list"> &gt; brew install asdf
+
+ To use asdf, add the following line to your ~/.zshrc:
+ . /opt/homebrew/opt/asdf/libexec/asdf.sh
+ Restart your terminal for the settings to take effect.
+ zsh completions have been installed to:
+ /opt/homebrew/share/zsh/site-functions
+ ==&gt; Summary
+ 🍺  /opt/homebrew/Cellar/asdf/0.10.2: 168 files, 717.0KB
+ ==&gt; Running `brew cleanup asdf`...
+ Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+ ==&gt; Caveats
+ ==&gt; asdf
+ To use asdf, add the following line to your ~/.zshrc:
+
+ . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+ Restart your terminal for the settings to take effect.
+
+ zsh completions have been installed to:
+ /opt/homebrew/share/zsh/site-functions
+</pre>
+</div>
+<p>インストールが完了しましたので、「Caveats」にある指示に従い「~/.zshrc」にasdfのスクリプトが実行されるように、</p>
+<p>. /opt/homebrew/opt/asdf/libexec/asdf.sh</p>
+<p>を追加します。</p>
+<p>現時点での「~/.zshrc」は、</p>
+<div id="id_.zshrc" class="caption-code">
+<span class="caption">リスト4.1: リスト4.1: </span>
+<pre class="list"> # Homebrew
+ eval &quot;$（/opt/homebrew/bin/brew shellenv）&quot;
+
+ # asdf
+  . /opt/Homebrew/opt/asdf/libexec/asdf.sh
+</pre>
+</div>
+<p>があれば大丈夫です。</p>
+<p><br /></p>
+<p>設定ファイルを再度読み込みます。</p>
+<div class="cmd-code">
+<span class="caption">.zshrcの再読み込み</span>
+<pre class="list"> &gt; source ~/.zshrc
+</pre>
+</div>
+<p><br /></p>
+<p>これで、asdfが動作します。ターミナルに「asdf」と入力しエンターキーを押すと、ヘルプが表示されます。</p>
+<div class="cmd-code">
+<span class="caption">asdfのヘルプ</span>
+<pre class="list">  ❯ asdf
+  version: v0.10.2
+
+  MANAGE PLUGINS
+  asdf plugin add &lt;name&gt; [&lt;git-url&gt;]      Add a plugin from the plugin repo OR,
+                                          add a Git repo as a plugin by
+                                          specifying the name and repo url
+  asdf plugin list [--urls] [--refs]      List installed plugins. Optionally show
+                                          git urls and git-ref
+  asdf plugin list all                    List plugins registered on asdf-plugins
+                                          repository with URLs
+  asdf plugin remove &lt;name&gt;               Remove plugin and package versions
+               Update asdf to the latest on the master branch
+     ・
+     ・中略
+     ・
+  RESOURCES
+  GitHub: https://github.com/asdf-vm/asdf
+  Docs:   https://asdf-vm.com
+
+  &quot;Late but latest&quot;
+  -- Rajinikanth
+</pre>
+</div>
+<p><br /></p>
+<p>Flutterのバージョン管理ができるように、「flutterプラグイン」をインストールします。どんなプログラミング言語・フレームワークのバージョン管理ができるのかは、「asdf plugin list all」で確認できます。</p>
+<p><br /></p>
+<p>ターミナルに「asdf plugin add flutter」と入力しエンターキーを押します。</p>
+<div class="cmd-code">
+<span class="caption">flutterプラグインのインストール</span>
+<pre class="list"> &gt; asdf plugin add Flutter
+ updating plugin repository...HEAD is now at 08fb6a9 fix: recent erroneous PRs (#658)
+</pre>
+</div>
+<p><br /></p>
+<p>Flutterのインストールは、asdf経由で行います。asdf経由でインストール可能なFlutterのバージョンを確認します。</p>
+<p><br /></p>
+<p>ターミナルに「asdf list all flutter」と入力しエンターキーを押します。</p>
+<div class="cmd-code">
+<span class="caption">asdfでインストール可能なFlutterのバージョン表示</span>
+<pre class="list"> &gt; asdf list all flutter
+0.1.6-dev
+0.2.1-dev
+0.1.8-dev
+0.1.9-dev
+1.26.0-12.0.pre-dev
+1.22.6-stable
+  ・
+  ・中略
+  ・
+2.13.0-0.1.pre-beta
+2.10.5-stable <span class="balloon">← 2.x系の最新版</span>
+  ・
+  ・中略
+  ・
+3.0.5-stable <span class="balloon">← 最新の安定版</span>
+  ・
+  ・中略
+  ・
+3.3.0-0.5.pre-beta <span class="balloon">← 最新のベータ版</span>
+</pre>
+</div>
+<p>過去のバージョンも含めインストール可能なバージョンが表示されます。</p>
+<div class="note">
+<h5>インストール可能バージョンが表示されない場合</h5>
+<p>　Mac用のflutterは、「intel chip」、「Apple Silicon」版と分かれています。バージョン表示されない場合は、</p>
+<div class="cmd-code">
+<span class="caption">Rosetta2使用許可</span>
+<pre class="list"> &gt; sudo softwareupdate --install-rosetta --agree-to-license
+</pre>
+</div>
+<p>　を行ってください。</p>
+</div>
+<p>以上で、バージョン管理ツール「asdf」のインストールが完了し、Flutterインストールの準備ができました。</p>
+
+        </main>
+        <nav class="page-navi">
+          <a href="03-homebrew.html" class="page-prev">&#9664;</a>
+          <a href="05-flutter.html" class="page-next">&#9654;</a>
+        </nav>
+        <footer>
+        </footer>
+      </div>
+    </div>
+    <script>
+function rebuildAndReloadForcedly() {
+  fetch('/rebuild.js').then((resp)=>{
+    resp.text().then((text)=>{ eval(text); });
+  });
+}
+    </script>
+    <script src="/rebuild.js?file=04-asdf.re"></script>
+  </body>
+</html>
+<!-- layout.html5.erb -->

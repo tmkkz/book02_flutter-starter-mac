@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Xcodeのインストール | FlutterでAndroid、iPhoneアプリ開発</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/webstyle.css" />
+    <link rel="next" title="Xcodeのインストール" href="07-xcode.html">
+    <link rel="prev" title="Flutterのインストール" href="05-flutter.html">
+    <meta name="generator" content="Re:VIEW Starter">
+  </head>
+  <body>
+    <div class="page-outer">
+      <nav class="side-content">
+                <div class="rebuild">
+          <a href="javascript:void(0)" onclick="rebuildAndReloadForcedly()">Rebuild and Reload</a>
+        </div>
+                <a class="nav-title" href="index.html">FlutterでAndroid、iPhoneアプリ開発</a>
+<ul class="toc toc-1">
+    <li class="toc-chapter"><a href="./00-preface.html">はじめに</a></li>
+    <li class="toc-chapter"><a href="./01-whatis.html">1 Flutterとは？</a></li>
+    <li class="toc-chapter"><a href="./02-instraction.html">2 Flutter開発環境の作成手順</a></li>
+    <li class="toc-chapter"><a href="./03-homebrew.html">3 Homebrewのインストール</a></li>
+    <li class="toc-chapter"><a href="./04-asdf.html">4 バージョン管理ツールasdfのインストール</a></li>
+    <li class="toc-chapter"><a href="./05-flutter.html">5 Flutterのインストール</a></li>
+    <li class="toc-chapter"><a href="./06-xcodes.html">6 Xcodeのインストール</a>
+      <ul class="toc toc-2">
+        <li class="toc-section"><a href="#h6-1">6.1 Xcodesのインストール</a></li>
+        <li class="toc-section"><a href="#h6-2">6.2 Xcodeのインストール</a></li>
+      </ul>
+    </li>
+    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール</a></li>
+    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPodsのインストール</a></li>
+    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudioのインストール</a></li>
+    <li class="toc-chapter"><a href="./10-commandlinetools.html">10 command-line toolsのインストール</a></li>
+    <li class="toc-chapter"><a href="./11-startproject.html">11 プロジェクトのスタート</a></li>
+</ul>
+      </nav>
+      <div class="page-inner">
+        <header class="page-header">
+        </header>
+        <main class="page-main">
+<h1 id="id_06-xcodes" class="boldlines center twolines"><a id="h6"></a><span class="secno">第6章</span> <br/>Xcodeのインストール</h1>
+<div class="abstract">
+<p>XcodeはAppleが提供するシステム統合開発環境です。統合開発環境もFlutterなどのフレームワークやプログラミング言語と同じようにmacOSと伴にバージョンアップされます。</p>
+<p>Xcodeも同じようにバージョン管理の対象にし、「Xcodes」と言うツールを使い、複数のバージョンを切り替えることができるようにします。</p>
+</div>
+<div id="xcode7" class="image">
+<img src="images/06-xcodes/xcode7.png" alt="Xcodeのバージョン管理ツール" class="img width-020per" />
+<p class="caption">
+図6.1: Xcodeのバージョン管理ツール
+</p>
+</div>
+<p>Xcodesとは、複数のXcodeバージョンをインストールでき、それを簡単に切り替えることができるツールです。ダウンロードも独自で行うため、Apple Storeからダウンロードするよりも断然早くダウンロードできます。</p>
+<div id="xcode2" class="image">
+<img src="images/06-xcodes/xcode2.png" alt="Xcodes" class="img width-070per" />
+<p class="caption">
+図6.2: Xcodes
+</p>
+</div>
+
+<h2 class="grayback"><a id="h6-1"></a><span class="secno">6.1</span> Xcodesのインストール</h2>
+<p>Apple App Storeからインストールされる方は、ここはスキップしてください。</p>
+<p>XcodesはHomebrewからインストールします。ターミナルに「brew install --cask xcodes」と入力しエンターキーを押します。</p>
+<div class="cmd-code">
+<span class="caption">Xcodesのインストール</span>
+<pre class="list"> &gt; brew install --cask xcodes
+</pre>
+</div>
+
+<h2 class="grayback"><a id="h6-2"></a><span class="secno">6.2</span> Xcodeのインストール</h2>
+
+<h3 class="symbol"><a id="h6-2-1"></a><span class="secno">6.2.1</span> Xcodesを使用する場合</h3>
+<p><br /></p>
+<p>インストールが完了しましたら、Launchpadなどから起動します。通常のGUIアプリケーションですのでApplicationフォルダにインストールされています。</p>
+<div id="xcode3" class="image">
+<img src="images/06-xcodes/xcode3.png" alt="Xcodesを起動" class="img width-070per" />
+<p class="caption">
+図6.3: Xcodesを起動
+</p>
+</div>
+<p>インストール可能なバージョンが表示されますので、インストールするバージョンの右側の「INSTALL」ボタンをクリックします。ダウンロードが完了しましたら、「INSTALL」ボタンが「OPEN」ボタンに変わります。</p>
+<div id="xcode4" class="image">
+<img src="images/06-xcodes/xcode4.png" alt="Xcodeのインストール完了" class="img width-070per" />
+<p class="caption">
+図6.4: Xcodeのインストール完了
+</p>
+</div>
+<p>インストール先は、「/Applicationフォルダ」にバージョン付きの名前です。</p>
+<p>「Open」ボタンの左にある「チェックマーク」をクリックすると、対象のバージョンがアクティブになります。アクティブにすると、Xcodeインストール後に行う以下のコマンドが自動で実行されます。</p>
+<div id="xcode5" class="image">
+<img src="images/06-xcodes/xcode5.png" alt="" class="img width-070per" />
+<p class="caption">
+図6.5: 
+</p>
+</div>
+<p>このコマンドは、Xcodesで選択したバージョンをアクティブにすると自動で実行されます。</p>
+<div class="cmd-code">
+<span class="caption">Xcodeインストール後に必要なコマンド</span>
+<pre class="list"> &gt; sudo xcode-select --switch /Applications/XCode+バージョン.app/Contents/developer
+ &gt; sudo xcodebuild -runFirstLaunch
+</pre>
+</div>
+<p><br /></p>
+<p>現在のXcodeのバージョンの確認は、以下のコマンドで行います。</p>
+<div class="cmd-code">
+<span class="caption">Xcodeバージョン確認</span>
+<pre class="list">  ❯ xcodebuild -version
+  Xcode 14.0
+  Build version 14A5294g
+  ❯ xcodebuild -version
+  Xcode 13.4.1
+  Build version 13F100
+</pre>
+</div>
+
+<h3 class="symbol"><a id="h6-2-2"></a><span class="secno">6.2.2</span> Apple App Storeからインストールする場合</h3>
+<p>Lounchpadから「App Store」を起動します。</p>
+<div id="xcode" class="image">
+<img src="images/06-xcodes/xcode.png" alt="Mac App Store" class="img width-070per" />
+<p class="caption">
+図6.6: Mac App Store
+</p>
+</div>
+<p>「入手」、「インストール」をクリックしてインストールします。Xcodeは13GB近くありますので時間がかかります。</p>
+<p>以上で、Xcodeのインストールが完了しました。</p>
+
+        </main>
+        <nav class="page-navi">
+          <a href="05-flutter.html" class="page-prev">&#9664;</a>
+          <a href="07-xcode.html" class="page-next">&#9654;</a>
+        </nav>
+        <footer>
+        </footer>
+      </div>
+    </div>
+    <script>
+function rebuildAndReloadForcedly() {
+  fetch('/rebuild.js').then((resp)=>{
+    resp.text().then((text)=>{ eval(text); });
+  });
+}
+    </script>
+    <script src="/rebuild.js?file=06-xcodes.re"></script>
+  </body>
+</html>
+<!-- layout.html5.erb -->

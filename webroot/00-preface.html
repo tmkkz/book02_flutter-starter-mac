@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>はじめに | FlutterでAndroid、iPhoneアプリ開発</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/webstyle.css" />
+    <link rel="next" title="Flutterとは？" href="01-whatis.html">
+    <meta name="generator" content="Re:VIEW Starter">
+  </head>
+  <body>
+    <div class="page-outer">
+      <nav class="side-content">
+                <div class="rebuild">
+          <a href="javascript:void(0)" onclick="rebuildAndReloadForcedly()">Rebuild and Reload</a>
+        </div>
+                <a class="nav-title" href="index.html">FlutterでAndroid、iPhoneアプリ開発</a>
+<ul class="toc toc-1">
+    <li class="toc-chapter"><a href="./00-preface.html">はじめに</a></li>
+    <li class="toc-chapter"><a href="./01-whatis.html">1 Flutterとは？</a></li>
+    <li class="toc-chapter"><a href="./02-instraction.html">2 Flutter開発環境の作成手順</a></li>
+    <li class="toc-chapter"><a href="./03-homebrew.html">3 Homebrewのインストール</a></li>
+    <li class="toc-chapter"><a href="./04-asdf.html">4 バージョン管理ツールasdfのインストール</a></li>
+    <li class="toc-chapter"><a href="./05-flutter.html">5 Flutterのインストール</a></li>
+    <li class="toc-chapter"><a href="./06-xcodes.html">6 Xcodeのインストール</a></li>
+    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール</a></li>
+    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPodsのインストール</a></li>
+    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudioのインストール</a></li>
+    <li class="toc-chapter"><a href="./10-commandlinetools.html">10 command-line toolsのインストール</a></li>
+    <li class="toc-chapter"><a href="./11-startproject.html">11 プロジェクトのスタート</a></li>
+</ul>
+      </nav>
+      <div class="page-inner">
+        <header class="page-header">
+        </header>
+        <main class="page-main">
+<h1 class="none center"><a id="h"></a><br/>はじめに</h1>
+<p><br /></p>
+<p>このたびは、「Flutter開発環境の作成-Mac版」を、手にしていただき誠にありがとうございます。</p>
+<p><br /></p>
+<p>本書で使用しているイラストは、</p>
+<div id="aa_story_board" class="image">
+<img src="images/00-preface/aa_story_board.png" alt="" class="img width-060per" />
+<p class="caption">
+図1: 
+</p>
+</div>
+<p>にて作成しています。作者のtgk様、2chへAAを投稿された皆様へ感謝します。</p>
+<p><br /></p>
+<p>本書は、MacでのFlutter開発環境の作成を解説しています。CPUがIntel、Apple Siliconのどちらでも問題ありません。本書にてFlutterへ興味を持っていただけ、ひとりでもFlutter使いが増えることを願っています。</p>
+<p><br /></p>
+<p>もし、本書に間違い、誤字脱字がございましたら<a href="https://github.com/risingforce9zz/book02_flutter-dev-starter-mac" class="link">サポートサイト</a>にてissueを作成していただけると助かります。</p>
+<p><br /></p>
+
+<h3 class="symbol"><a id="h-0-1"></a>モバイルアプリケーション</h3>
+<p>あなたが毎日使っているスマートフォンですが、アプリケーションがなければなにもできません。</p>
+<p><br /></p>
+<p>動画を観たり、</p>
+<ul>
+<li>ゲームをしたり、
+</li>
+<li>SNSで友人とつながったり、
+</li>
+<li>支払い
+</li>
+</ul>
+<p>なども、すべてアプリケーションを使います。</p>
+<p><br /></p>
+<p>そのモバイルアプリケーション（以下アプリ）を無料で簡単に開発できるとしたら、いかがでしょうか？</p>
+<p><br /></p>
+<p>しかも、Android用、iPhone用とも、ひとつの開発環境で。</p>
+<p><br /></p>
+<p>その魔法のようなツールは、「Flutter」と言います。Googleが2018年に正式版を発表したフリーでオープンソースなクロスプラットフォームアプリケーションを開発できるSDK（Software Devlopment Kit）です。</p>
+<p><br /></p>
+<p>このFlutter開発環境を、あなたのPCに導入してみませんか？</p>
+<p><br /></p>
+
+<h3 class="symbol"><a id="h-0-2"></a>クロスプラットフォームとは？</h3>
+<p>それぞれのプラットフォームでアプリケーションを開発する場合には、ネイティブ言語と呼ばれるプログラミング言語が使用されます。</p>
+<dl>
+<dt>Andoroidアプリ</dt>
+<dd>
+  JavaまたはKotolin
+</dd>
+<dt>iOSアプリ、Mac用デスクトップアプリ</dt>
+<dd>
+  SwiftまたはObjectiveC
+</dd>
+<dt>Windowsデスクトップアプリ</dt>
+<dd>
+  C++、C#
+</dd>
+<dt>Webアプリ</dt>
+<dd>
+  HTML、CSS、JavaScript
+</dd>
+</dl>
+<p><br /></p>
+<p>しかし、Flutterではプログラミング言語Dartを使うことで、ひとつのソースコードから各プログラミング言語へ変換し、それぞれのプラットフォームでアプリケーションをビルドできます。</p>
+<p><br /></p>
+<p>つまり、あなたはDartが使えるようになるだけで、Androidアプリ、iOSアプリ（iPhone、iPad）、Windowsデスクトップアプリ、Macデスクトップアプリ、Webアプリを開発できます。</p>
+<p><br /></p>
+
+<h3 class="symbol"><a id="h-0-3"></a>なぜ、クロスプラットフォーム開発が主流になるのか？</h3>
+<p>たとえば、iPhone用アプリを開発する方法としては、Macを使い、Xcode（統合開発ツール）で、プログラミング言語ObjectivC、または、Swiftでコードを書きます。</p>
+<p><br /></p>
+<p>同じアプリをAndroid用としてリリースするには、Android Studio（統合開発ツール）やエディタを使い、プログラミング言語Java、または、Kotolinでコードを書きます。</p>
+<p><br /></p>
+<p>エミュレータか実機（Android、iPhone）でデバッグを行い、機能の実装に問題がなければリリースします。</p>
+<p><br /></p>
+<p>同じアプリですが、ソースコードは別々に管理しなければなりません。また、アップデート、修正もそれぞれのソースコードを変更しなければなりません。</p>
+<p><br /></p>
+<p>クロスプラットフォーム開発環境では、ひとつのソースコードから、複数のプラットフォーム用のアプリケーションを開発できます。</p>
+<p><br /></p>
+<p>クロスプラットフォーム開発環境で使われているのは、</p>
+<ul>
+<li>React Native -- JavaScript
+</li>
+<li>Xamarin -- C#
+</li>
+<li>Flutter -- Dart
+</li>
+</ul>
+<p>などがあります。</p>
+<p><br /></p>
+
+<h3 class="symbol"><a id="h-0-4"></a>なぜFlutterなのか？</h3>
+<p>Flutterでは作成したアプリケーションが、それぞれのネイティブ言語に変換されてからビルドされるので高いパフォーマンスと信頼性が得られます。</p>
+<p><br /></p>
+<p>Flutterを使えば、</p>
+<ul>
+<li>Android StudioかVSCodeでプログラミング言語Dartで、
+</li>
+<li>ひとつのソースコードで、Android、iOSのアプリケーションに対応
+</li>
+</ul>
+<p>できます。</p>
+<p><br /></p>
+<p>リリース時には、プロジェクトフォルダにFlutterから変換された、</p>
+<dl>
+<dt>Andoroid、</dt>
+<dd>
+  Andoroid Studio上でビルド
+</dd>
+<dt>iPhone、</dt>
+<dd>
+  iOSフォルダ（objective-C、Kotlinの選択）をXcodeを使ってビルド
+</dd>
+<dt>Windows用、Mac用の各デスクトップ、Webアプリ</dt>
+<dd>
+  それぞれのプラットフォーム上でFlutterコマンドでビルド
+</dd>
+</dl>
+<p><br /></p>
+<p>驚くほど簡単にアプリが作成できますので、手持ちのPCに開発環境を作成しましょう。</p>
+<p><br /></p>
+<p>すべて無料で始めることができます。</p>
+
+        </main>
+        <nav class="page-navi">
+          <a href="01-whatis.html" class="page-next">&#9654;</a>
+        </nav>
+        <footer>
+        </footer>
+      </div>
+    </div>
+    <script>
+function rebuildAndReloadForcedly() {
+  fetch('/rebuild.js').then((resp)=>{
+    resp.text().then((text)=>{ eval(text); });
+  });
+}
+    </script>
+    <script src="/rebuild.js?file=00-preface.re"></script>
+  </body>
+</html>
+<!-- layout.html5.erb -->

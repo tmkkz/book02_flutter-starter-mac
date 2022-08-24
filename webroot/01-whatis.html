@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Flutterとは？ | FlutterでAndroid、iPhoneアプリ開発</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/webstyle.css" />
+    <link rel="next" title="Flutter開発環境の作成手順" href="02-instraction.html">
+    <link rel="prev" title="はじめに" href="00-preface.html">
+    <meta name="generator" content="Re:VIEW Starter">
+  </head>
+  <body>
+    <div class="page-outer">
+      <nav class="side-content">
+                <div class="rebuild">
+          <a href="javascript:void(0)" onclick="rebuildAndReloadForcedly()">Rebuild and Reload</a>
+        </div>
+                <a class="nav-title" href="index.html">FlutterでAndroid、iPhoneアプリ開発</a>
+<ul class="toc toc-1">
+    <li class="toc-chapter"><a href="./00-preface.html">はじめに</a></li>
+    <li class="toc-chapter"><a href="./01-whatis.html">1 Flutterとは？</a></li>
+    <li class="toc-chapter"><a href="./02-instraction.html">2 Flutter開発環境の作成手順</a></li>
+    <li class="toc-chapter"><a href="./03-homebrew.html">3 Homebrewのインストール</a></li>
+    <li class="toc-chapter"><a href="./04-asdf.html">4 バージョン管理ツールasdfのインストール</a></li>
+    <li class="toc-chapter"><a href="./05-flutter.html">5 Flutterのインストール</a></li>
+    <li class="toc-chapter"><a href="./06-xcodes.html">6 Xcodeのインストール</a></li>
+    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール</a></li>
+    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPodsのインストール</a></li>
+    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudioのインストール</a></li>
+    <li class="toc-chapter"><a href="./10-commandlinetools.html">10 command-line toolsのインストール</a></li>
+    <li class="toc-chapter"><a href="./11-startproject.html">11 プロジェクトのスタート</a></li>
+</ul>
+      </nav>
+      <div class="page-inner">
+        <header class="page-header">
+        </header>
+        <main class="page-main">
+<h1 id="id_01-what_is_flutter" class="boldlines center twolines"><a id="h1"></a><span class="secno">第1章</span> <br/>Flutterとは？</h1>
+<p>それでは、「Flutterとは何なのか？」をもう少し詳しく紹介します。</p>
+<p>　Flutter</p>
+<p>「はじめに」でも紹介しましたように、開発環境（Android Studio含む）が作成できさえすれば、数クリックするだけで以下のようなスタートアップアプリがエミュレータ上で動作します。</p>
+<div id="final" class="image">
+<img src="images/01-whatis/final.png" alt="Android Studioでスタートアッププロジェクトのデバッグ" class="img width-080per" />
+<p class="caption">
+図1.1: Android Studioでスタートアッププロジェクトのデバッグ
+</p>
+</div>
+<p><br /></p>
+<p>Google PlayやApple Storeで公開するためには、それぞれに開発者登録したり、リリース作業が必要になります。</p>
+<p><br /></p>
+<p>しかし、モバイルアプリケーションを作成するためには、</p>
+<ul>
+<li>iOSアプリ開発のためプログラミング言語 Swiftの学習
+</li>
+<li>Xcode（統合開発環境）の使い方を取得
+</li>
+<li>Androidアプリ開発のためプログラミング言語 Java、または、Kotlinの学習
+</li>
+<li>Android Studio（統合開発環境）の使い方を取得
+</li>
+</ul>
+<p>など、膨大な作業が必要だと諦めていたのではありませんか？</p>
+<p><br /></p>
+<p>実は、Flutterを使うことでAndroid用、iPhone用のモバイルアプリを簡単に</p>
+<p><br /></p>
+<p>Flutterでは、ウィジェット（ウィジェット）と呼ばれる部品を組み合わせて表示するページを作成します。ウィジェットは、自分で作成できますし、あらかじめFlutterに用意されているウィジェット、自由につかえるよう公開されているウィジェットもあります。</p>
+<p>ウィジェットは、誤解を恐れずに言うと、HTMLにおけるHTMLタグのようなものです。</p>
+<p>//blanklineFlu</p>
+
+        </main>
+        <nav class="page-navi">
+          <a href="00-preface.html" class="page-prev">&#9664;</a>
+          <a href="02-instraction.html" class="page-next">&#9654;</a>
+        </nav>
+        <footer>
+        </footer>
+      </div>
+    </div>
+    <script>
+function rebuildAndReloadForcedly() {
+  fetch('/rebuild.js').then((resp)=>{
+    resp.text().then((text)=>{ eval(text); });
+  });
+}
+    </script>
+    <script src="/rebuild.js?file=01-whatis.re"></script>
+  </body>
+</html>
+<!-- layout.html5.erb -->
