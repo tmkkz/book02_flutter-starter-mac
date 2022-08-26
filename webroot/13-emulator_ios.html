@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>iPhoneエミュレータ | FlutterでAndroid、iPhoneアプリ開発</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/webstyle.css" />
+    <link rel="next" title="エミュレータでデバッグ" href="14-debug.html">
+    <link rel="prev" title="Androidエミュレータ" href="12-emulator_android.html">
+    <meta name="generator" content="Re:VIEW Starter">
+  </head>
+  <body>
+    <div class="page-outer">
+      <nav class="side-content">
+                <div class="rebuild">
+          <a href="javascript:void(0)" onclick="rebuildAndReloadForcedly()">Rebuild and Reload</a>
+        </div>
+                <a class="nav-title" href="index.html">FlutterでAndroid、iPhoneアプリ開発</a>
+<ul class="toc toc-1">
+    <li class="toc-chapter"><a href="./00-preface.html">はじめに</a></li>
+    <li class="toc-chapter"><a href="./01-whatis.html">1 Flutterとは？</a></li>
+    <li class="toc-chapter"><a href="./02-instraction.html">2 Flutter開発環境の作成手順</a></li>
+    <li class="toc-chapter"><a href="./03-homebrew.html">3 Homebrewのインストール</a></li>
+    <li class="toc-chapter"><a href="./04-asdf.html">4 バージョン管理ツールasdfのインストール</a></li>
+    <li class="toc-chapter"><a href="./05-flutter.html">5 Flutterのインストール</a></li>
+    <li class="toc-chapter"><a href="./06-xcodes.html">6 Xcodeのインストール</a></li>
+    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール後の確認</a></li>
+    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPods</a></li>
+    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudio</a></li>
+    <li class="toc-chapter"><a href="./10-commandlinetools.html">10 command-line toolsのインストール</a></li>
+    <li class="toc-chapter"><a href="./11-startproject.html">11 プロジェクトのスタート</a></li>
+    <li class="toc-chapter"><a href="./12-emulator_android.html">12 Androidエミュレータ</a></li>
+    <li class="toc-chapter"><a href="./13-emulator_ios.html">13 iPhoneエミュレータ</a>
+      <ul class="toc toc-2">
+        <li class="toc-section"><a href="#h13-1">13.1 iOSエミュレータ</a></li>
+        <li class="toc-section"><a href="#h13-2">13.2 以前のiOSバージョンの機種を作成</a></li>
+      </ul>
+    </li>
+    <li class="toc-chapter"><a href="./14-debug.html">14 エミュレータでデバッグ</a></li>
+    <li class="toc-chapter"><a href="./15-ending.html">15 おわりに</a></li>
+</ul>
+      </nav>
+      <div class="page-inner">
+        <header class="page-header">
+        </header>
+        <main class="page-main">
+<h1 id="id_13-emulator_ios" class="boldlines center twolines"><a id="h13"></a><span class="secno">第13章</span> <br/>iPhoneエミュレータ</h1>
+<div class="abstract">
+<p>iOS用のデバイスも毎年リリースされ、複数の画面サイズが当たり前になりました。</p>
+<p>これらもすべて実機でテストできれば良いのですが、仕様の範囲内でエミュレータを使って動作確認、デザイン確認を行います。</p>
+</div>
+
+<h2 class="grayback"><a id="h13-1"></a><span class="secno">13.1</span> iOSエミュレータ</h2>
+<p>　iOSエミュレータは、Xcodeに含まれています。ターミナルに「open -a Simulator.app」を入力しエンターキーを押します。</p>
+<div class="cmd-code">
+<span class="caption">iOSエミュレータの起動</span>
+<pre class="list"> &gt; open -a Simulator
+</pre>
+</div>
+<p><br /></p>
+<p>コマンドが実行されると、エミュレータ（iOSではシミレータ？でも、本書ではエミュレータで統一します。）が起動します。DockにあるエミュレータアイコンをOptionで「Dockに追加」を行えば、次回からはワン・クリックで起動できます。</p>
+<div id="iosEmu01" class="image">
+<img src="images/13-emulator_ios/iosEmu01.png" alt="iOSエミュレータ" class="img width-050per" />
+<p class="caption">
+図13.1: iOSエミュレータ
+</p>
+</div>
+<p><br /></p>
+<p>機種の切替は、メニューの「File」&gt;「Open Simulator」&gt;「iOS XX.X」&gt;機種名で選択します。</p>
+<div id="iosEmu02" class="image">
+<img src="images/13-emulator_ios/iosEmu02.png" alt="iOSエミュレータの機種変更" class="img width-070per" />
+<p class="caption">
+図13.2: iOSエミュレータの機種変更
+</p>
+</div>
+
+<h2 class="grayback"><a id="h13-2"></a><span class="secno">13.2</span> 以前のiOSバージョンの機種を作成</h2>
+<p><br /></p>
+<p>Xcodeは、ダウンロードした時点での最新のiOSしか持っていません。旧バージョンのエミュレータを作成したい場合は、Xcodeを起動し「Window」&gt;「Devices and Simulators」を選択します。</p>
+<div id="iosEmu03" class="image">
+<img src="images/13-emulator_ios/iosEmu03.png" alt="iOSエミュレータの旧バージョン機種作成" class="img width-070per" />
+<p class="caption">
+図13.3: iOSエミュレータの旧バージョン機種作成
+</p>
+</div>
+<p><br /></p>
+<p>エミュレータウィンドウが開きますので、下の「+」をクリックします。</p>
+<div id="iosEmu04" class="image">
+<img src="images/13-emulator_ios/iosEmu04.png" alt="iOSエミュレータウィンドウ" class="img width-070per" />
+<p class="caption">
+図13.4: iOSエミュレータウィンドウ
+</p>
+</div>
+<p><br /></p>
+<p>エミュレータの新規作成ウィンドウが開きますので、「Simuraltor Name」に作成する機種名を入力します。</p>
+<div id="iosEmu05" class="image">
+<img src="images/13-emulator_ios/iosEmu05.png" alt="新規iOSエミュレータの作成" class="img width-070per" />
+<p class="caption">
+図13.5: 新規iOSエミュレータの作成
+</p>
+</div>
+<p><br /></p>
+<p>「Device Type」のドロップダウンリストから作成する機種を選択します。</p>
+<div id="iosEmu06" class="image">
+<img src="images/13-emulator_ios/iosEmu06.png" alt="新規iOSエミュレータのデバイスタイプ" class="img width-070per" />
+<p class="caption">
+図13.6: 新規iOSエミュレータのデバイスタイプ
+</p>
+</div>
+<p><br /></p>
+<p>使用したいiOSのバージョンがない場合には、「Download more simulator runtimes」をクリックします。</p>
+<div id="iosEmu07" class="image">
+<img src="images/13-emulator_ios/iosEmu07.png" alt="新規iOSエミュレータでのOSのバージョン選択" class="img width-070per" />
+<p class="caption">
+図13.7: 新規iOSエミュレータでのOSのバージョン選択
+</p>
+</div>
+<p><br /></p>
+<p>Componentsウィンドウが開きます。使用したいiOS Simulator左のアイコンをクリックするとダウンロードが開始されます。</p>
+<div id="iosEmu08" class="image">
+<img src="images/13-emulator_ios/iosEmu08.png" alt="iOS旧バージョンダウンロード" class="img width-070per" />
+<p class="caption">
+図13.8: iOS旧バージョンダウンロード
+</p>
+</div>
+<p><br /></p>
+<p>ダウンロードは、結構時間がかかります。</p>
+<div id="iosEmu09" class="image">
+<img src="images/13-emulator_ios/iosEmu09.png" alt="旧バージョンダウンロード中" class="img width-070per" />
+<p class="caption">
+図13.9: 旧バージョンダウンロード中
+</p>
+</div>
+<p><br /></p>
+<p>ダウンロードが完了すると、機種が作成されています。</p>
+<div id="iosEmu10" class="image">
+<img src="images/13-emulator_ios/iosEmu10.png" alt="旧バージョンでの機種作成完了" class="img width-070per" />
+<p class="caption">
+図13.10: 旧バージョンでの機種作成完了
+</p>
+</div>
+<p><br /></p>
+<p>ダウンロードした旧バージョンは、次回からは選択できます。</p>
+<div id="iosEmu11" class="image">
+<img src="images/13-emulator_ios/iosEmu11.png" alt="iOSバージョンを指定しての機種作成" class="img width-070per" />
+<p class="caption">
+図13.11: iOSバージョンを指定しての機種作成
+</p>
+</div>
+
+        </main>
+        <nav class="page-navi">
+          <a href="12-emulator_android.html" class="page-prev">&#9664;</a>
+          <a href="14-debug.html" class="page-next">&#9654;</a>
+        </nav>
+        <footer>
+        </footer>
+      </div>
+    </div>
+    <script>
+function rebuildAndReloadForcedly() {
+  fetch('/rebuild.js').then((resp)=>{
+    resp.text().then((text)=>{ eval(text); });
+  });
+}
+    </script>
+    <script src="/rebuild.js?file=13-emulator_ios.re"></script>
+  </body>
+</html>
+<!-- layout.html5.erb -->

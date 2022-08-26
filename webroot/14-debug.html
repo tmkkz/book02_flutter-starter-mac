@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>エミュレータでデバッグ | FlutterでAndroid、iPhoneアプリ開発</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/webstyle.css" />
+    <link rel="next" title="おわりに" href="15-ending.html">
+    <link rel="prev" title="iPhoneエミュレータ" href="13-emulator_ios.html">
+    <meta name="generator" content="Re:VIEW Starter">
+  </head>
+  <body>
+    <div class="page-outer">
+      <nav class="side-content">
+                <div class="rebuild">
+          <a href="javascript:void(0)" onclick="rebuildAndReloadForcedly()">Rebuild and Reload</a>
+        </div>
+                <a class="nav-title" href="index.html">FlutterでAndroid、iPhoneアプリ開発</a>
+<ul class="toc toc-1">
+    <li class="toc-chapter"><a href="./00-preface.html">はじめに</a></li>
+    <li class="toc-chapter"><a href="./01-whatis.html">1 Flutterとは？</a></li>
+    <li class="toc-chapter"><a href="./02-instraction.html">2 Flutter開発環境の作成手順</a></li>
+    <li class="toc-chapter"><a href="./03-homebrew.html">3 Homebrewのインストール</a></li>
+    <li class="toc-chapter"><a href="./04-asdf.html">4 バージョン管理ツールasdfのインストール</a></li>
+    <li class="toc-chapter"><a href="./05-flutter.html">5 Flutterのインストール</a></li>
+    <li class="toc-chapter"><a href="./06-xcodes.html">6 Xcodeのインストール</a></li>
+    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール後の確認</a></li>
+    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPods</a></li>
+    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudio</a></li>
+    <li class="toc-chapter"><a href="./10-commandlinetools.html">10 command-line toolsのインストール</a></li>
+    <li class="toc-chapter"><a href="./11-startproject.html">11 プロジェクトのスタート</a></li>
+    <li class="toc-chapter"><a href="./12-emulator_android.html">12 Androidエミュレータ</a></li>
+    <li class="toc-chapter"><a href="./13-emulator_ios.html">13 iPhoneエミュレータ</a></li>
+    <li class="toc-chapter"><a href="./14-debug.html">14 エミュレータでデバッグ</a>
+      <ul class="toc toc-2">
+        <li class="toc-section"><a href="#h14-1">14.1 Androidエミュレータ</a></li>
+        <li class="toc-section"><a href="#h14-2">14.2 iPhoneエミュレータ</a></li>
+      </ul>
+    </li>
+    <li class="toc-chapter"><a href="./15-ending.html">15 おわりに</a></li>
+</ul>
+      </nav>
+      <div class="page-inner">
+        <header class="page-header">
+        </header>
+        <main class="page-main">
+<h1 id="id_14-debug" class="boldlines center twolines"><a id="h14"></a><span class="secno">第14章</span> <br/>エミュレータでデバッグ</h1>
+<div class="abstract">
+<p>それでは、エミュレータを使ってスタートアッププロジェクトを動かしてみましょう。</p>
+<p>実機やエミュレータを使い、動作確認し不具合を見つけて修正することをデバッグと言います。ボタンクリックひとつで簡単に開始できます。</p>
+</div>
+
+<h2 class="grayback"><a id="h14-1"></a><span class="secno">14.1</span> Androidエミュレータ</h2>
+<p>デバイスマネージャーからエミュレータを起動します。</p>
+<p><br /></p>
+<p>Android Studioの右上にあるエミュレータから対象を選択し、右向き三角のアイコンをクリックします。</p>
+<div id="debug01" class="image">
+<img src="images/14-debug/debug01.png" alt="Androidエミュレータでデバッグ開始" class="img width-070per" />
+<p class="caption">
+図14.1: Androidエミュレータでデバッグ開始
+</p>
+</div>
+<p><br /></p>
+<p>プログラムの解析が行われ、エラーがない場合にはプログラムがスタートします。エミュレータに表示された「+」ボタンをクリックすると表示されている数字が増えていきます。</p>
+<div id="debug02" class="image">
+<img src="images/14-debug/debug02.png" alt="Androidエミュレータでデバッグ中" class="img width-070per" />
+<p class="caption">
+図14.2: Androidエミュレータでデバッグ中
+</p>
+</div>
+<p><br /></p>
+<p>デバッグの終了は、先ほどデバッグ開始時にクリックした右向き三角付近の「赤い四角」アイコンをクリックします。</p>
+
+<h2 class="grayback"><a id="h14-2"></a><span class="secno">14.2</span> iPhoneエミュレータ</h2>
+<p>Android Studioで、デバッグ対象にiPhoneを選択します。</p>
+<div id="debug03" class="image">
+<img src="images/14-debug/debug03.png" alt="iPhoneエミュレータでデバッグ開始" class="img width-070per" />
+<p class="caption">
+図14.3: iPhoneエミュレータでデバッグ開始
+</p>
+</div>
+<p><br /></p>
+<p>iPhoneでプログラムが開始され表示されます。同じように「+」ボタンをクリックすると表示している数が増えます。</p>
+<div id="debug04" class="image">
+<img src="images/14-debug/debug04.png" alt="iPhoneエミュレータでデバッグ中" class="img width-070per" />
+<p class="caption">
+図14.4: iPhoneエミュレータでデバッグ中
+</p>
+</div>
+
+        </main>
+        <nav class="page-navi">
+          <a href="13-emulator_ios.html" class="page-prev">&#9664;</a>
+          <a href="15-ending.html" class="page-next">&#9654;</a>
+        </nav>
+        <footer>
+        </footer>
+      </div>
+    </div>
+    <script>
+function rebuildAndReloadForcedly() {
+  fetch('/rebuild.js').then((resp)=>{
+    resp.text().then((text)=>{ eval(text); });
+  });
+}
+    </script>
+    <script src="/rebuild.js?file=14-debug.re"></script>
+  </body>
+</html>
+<!-- layout.html5.erb -->

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/webstyle.css" />
     <link rel="next" title="プロジェクトのスタート" href="11-startproject.html">
-    <link rel="prev" title="AndroidStudioのインストール" href="09-androidstudio.html">
+    <link rel="prev" title="AndroidStudio" href="09-androidstudio.html">
     <meta name="generator" content="Re:VIEW Starter">
   </head>
   <body>
@@ -25,11 +25,21 @@
     <li class="toc-chapter"><a href="./04-asdf.html">4 バージョン管理ツールasdfのインストール</a></li>
     <li class="toc-chapter"><a href="./05-flutter.html">5 Flutterのインストール</a></li>
     <li class="toc-chapter"><a href="./06-xcodes.html">6 Xcodeのインストール</a></li>
-    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール</a></li>
-    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPodsのインストール</a></li>
-    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudioのインストール</a></li>
-    <li class="toc-chapter"><a href="./10-commandlinetools.html">10 command-line toolsのインストール</a></li>
+    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール後の確認</a></li>
+    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPods</a></li>
+    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudio</a></li>
+    <li class="toc-chapter"><a href="./10-commandlinetools.html">10 command-line toolsのインストール</a>
+      <ul class="toc toc-2">
+        <li class="toc-section"><a href="#h10-1">10.1 cmdline-toolsのインストール</a></li>
+        <li class="toc-section"><a href="#h10-2">10.2 Androidライセンス</a></li>
+        <li class="toc-section"><a href="#h10-3">10.3 Android Studioへのプラグインのインストール</a></li>
+      </ul>
+    </li>
     <li class="toc-chapter"><a href="./11-startproject.html">11 プロジェクトのスタート</a></li>
+    <li class="toc-chapter"><a href="./12-emulator_android.html">12 Androidエミュレータ</a></li>
+    <li class="toc-chapter"><a href="./13-emulator_ios.html">13 iPhoneエミュレータ</a></li>
+    <li class="toc-chapter"><a href="./14-debug.html">14 エミュレータでデバッグ</a></li>
+    <li class="toc-chapter"><a href="./15-ending.html">15 おわりに</a></li>
 </ul>
       </nav>
       <div class="page-inner">
@@ -37,6 +47,187 @@
         </header>
         <main class="page-main">
 <h1 id="id_10-commandlinetools" class="boldlines center twolines"><a id="h10"></a><span class="secno">第10章</span> <br/>command-line toolsのインストール</h1>
+
+<h2 class="grayback"><a id="h10-1"></a><span class="secno">10.1</span> cmdline-toolsのインストール</h2>
+<p>Android Studioを起動しますと初期画面が開きます。</p>
+<div id="androidStudio11" class="image">
+<img src="images/10-commandlinetools/androidStudio11.png" alt="cmdlint-toolsのインストール" class="img width-070per" />
+<p class="caption">
+図10.1: cmdlint-toolsのインストール
+</p>
+</div>
+<p><br /></p>
+<p>中央にある「More Actions」をクリックし、「SDK-Manager」を選択します。</p>
+<div id="androidStudio12" class="image">
+<img src="images/10-commandlinetools/androidStudio12.png" alt="cmdlint-toolsのインストール" class="img width-070per" />
+<p class="caption">
+図10.2: cmdlint-toolsのインストール
+</p>
+</div>
+<p><br /></p>
+<p>右下の「OK」ボタンの上に「Show Package Details」チェックボックスがありますので、チェックします。「Android SDK Command-line Toools」の欄をクリックすると、インストール可能な「cmdline-tools」のバージョンが表示されます。一番上の（latest）をチェックし、右下の「OK」ボタンをクリックするとインストールされます。</p>
+<div id="androidStudio13" class="image">
+<img src="images/10-commandlinetools/androidStudio13.png" alt="cmdlint-toolsのインストール" class="img width-070per" />
+<p class="caption">
+図10.3: cmdlint-toolsのインストール
+</p>
+</div>
+<p><br /></p>
+<p>cmdline-toolsのインストールが完了しましたら、パスを通します。「.zshrc」に以下を追加し、再読み込みします。</p>
+<div class="caption-code">
+<span class="caption">.zshrcへcmdline-toolsのパスを通す</span>
+<pre class="list">  # Android
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export PATH=&quot;$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH&quot;
+  export PATH=&quot;$ANDROID_HOME/cmdline-tools/latest/bin:$PATH&quot;
+</pre>
+</div>
+<div class="cmd-code">
+<span class="caption">.zshrcの再読み込み</span>
+<pre class="list"> &gt; source ~/.zshrc
+</pre>
+</div>
+<p>「flutter doctor -v」で確認します。</p>
+<div class="cmd-code">
+<span class="caption">flutter doctor -v</span>
+<pre class="list">  ❯ flutter doctor -v
+  [✓] Flutter (Channel stable, 3.0.5, on macOS 12.5 21G72 darwin-arm, locale en-CA)
+      • Flutter version 3.0.5 at /Users/ユーザー名/.asdf/installs/flutter/3.0.5-stable
+      • Upstream repository [https://github.com/flutter/flutter.git](https://github.com/flutter/flutter.git)
+      • Framework revision f1875d570e (5 weeks ago), 2022-07-13 11:24:16 -0700
+      • Engine revision e85ea0e79c
+      • Dart version 2.17.6
+      • DevTools version 2.12.2
+
+  [!] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+      • Android SDK at /Users/ユーザー名/Library/Android/sdk
+      • Platform android-33, build-tools 33.0.0
+      • ANDROID_SDK_ROOT = /Users/ユーザー名/Library/Android/sdk
+      • Java binary at: /Applications/Android Studio.app/Contents/jre/Contents/Home/bin/java
+      • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+      ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+
+  [✓] Xcode - develop for iOS and macOS (Xcode 13.4.1)
+      • Xcode at /Applications/Xcode-13.4.1.app/Contents/Developer
+      • CocoaPods version 1.11.3
+
+  [✓] Chrome - develop for the web
+      • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+  [✓] Android Studio (version 2021.2)
+      • Android Studio at /Applications/Android Studio.app/Contents
+      • Flutter plugin can be installed from:
+      🔨 [https://plugins.jetbrains.com/plugin/9212-flutter](https://plugins.jetbrains.com/plugin/9212-flutter)
+      • Dart plugin can be installed from:
+      🔨 [https://plugins.jetbrains.com/plugin/6351-dart](https://plugins.jetbrains.com/plugin/6351-dart)
+      • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+
+  [✓] VS Code (version 1.70.1)
+      • VS Code at /Applications/Visual Studio Code.app/Contents
+      • Flutter extension version 3.46.0
+
+  [✓] Connected device (2 available)
+      • macOS (desktop) • macos  • darwin-arm64   • macOS 12.5 21G72 darwin-arm
+      • Chrome (web)    • chrome • web-javascript • Google Chrome 104.0.5112.79
+
+  [✓] HTTP Host Availability
+      • All required HTTP hosts are available
+
+  ! Doctor found issues in 1 category.
+</pre>
+</div>
+<p>あとひとつ、Androidのライセンスに関しての問題が解消されていません。</p>
+
+<h2 class="grayback"><a id="h10-2"></a><span class="secno">10.2</span> Androidライセンス</h2>
+<p>「flutter doctor -v」で表示された通りターミナルに「flutter doctor --android-licenses」と入力しエンターキーを押します。</p>
+<p><br /></p>
+<p>ライセンス許諾条項が表示されます。「accepted（y/N）」と聞かれますので、「ｙ」を押します。すべてのライセンス許諾に「y」と対応して完了です。</p>
+<div class="cmd-code">
+<span class="caption">Androidライセンス</span>
+<pre class="list"> &gt; flutter doctor --android-licenses
+ accepted (y/N)?
+</pre>
+</div>
+<p>完了しましたら、再び「flutter doctor -v」で確認します。</p>
+<div class="cmd-code">
+<span class="caption">flutter doctor -v</span>
+<pre class="list">  ❯ flutter doctor -v
+  [✓] Flutter (Channel stable, 3.0.5, on macOS 12.5 21G72 darwin-arm, locale en-CA)
+      • Flutter version 3.0.5 at /Users/ユーザー名/.asdf/installs/flutter/3.0.5-stable
+      • Upstream repository [https://github.com/flutter/flutter.git](https://github.com/flutter/flutter.git)
+      • Framework revision f1875d570e (5 weeks ago), 2022-07-13 11:24:16 -0700
+      • Engine revision e85ea0e79c
+      • Dart version 2.17.6
+      • DevTools version 2.12.2
+
+  [✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+      • Android SDK at /Users/ユーザー名/Library/Android/sdk
+      • Platform android-33, build-tools 33.0.0
+      • ANDROID_SDK_ROOT = /Users/ユーザー名/Library/Android/sdk
+      • Java binary at: /Applications/Android Studio.app/Contents/jre/Contents/Home/bin/java
+      • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+      • All Android licenses accepted.
+
+  [✓] Xcode - develop for iOS and macOS (Xcode 13.4.1)
+      • Xcode at /Applications/Xcode-13.4.1.app/Contents/Developer
+      • CocoaPods version 1.11.3
+
+  [✓] Chrome - develop for the web
+      • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+  [✓] Android Studio (version 2021.2)
+      • Android Studio at /Applications/Android Studio.app/Contents
+      • Flutter plugin can be installed from:
+      🔨 [https://plugins.jetbrains.com/plugin/9212-flutter](https://plugins.jetbrains.com/plugin/9212-flutter)
+      • Dart plugin can be installed from:
+      🔨 [https://plugins.jetbrains.com/plugin/6351-dart](https://plugins.jetbrains.com/plugin/6351-dart)
+      • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+
+  [✓] VS Code (version 1.70.1)
+      • VS Code at /Applications/Visual Studio Code.app/Contents
+      • Flutter extension version 3.46.0
+
+  [✓] Connected device (2 available)
+      • macOS (desktop) • macos  • darwin-arm64   • macOS 12.5 21G72 darwin-arm
+      • Chrome (web)    • chrome • web-javascript • Google Chrome 104.0.5112.79
+
+  [✓] HTTP Host Availability
+      • All required HTTP hosts are available
+
+  - No issues found!
+</pre>
+</div>
+<p>　これで問題は、すべて解消されました。</p>
+<p>　次に、上記の「Android Studio」欄にある、</p>
+<ul>
+<li>Flutter plugin can be installed from …
+</li>
+<li>Dart plugin can be installed from …
+</li>
+</ul>
+<p>とありますので、Android Studioに2つのプラグインをインストールします。</p>
+
+<h2 class="grayback"><a id="h10-3"></a><span class="secno">10.3</span> Android Studioへのプラグインのインストール</h2>
+<p>Android Stuidoを起動し、初期画面の左ペインにある「plugin」をクリックします。検索欄に、「Flutter」、「Dart」と入力し検索します。</p>
+<p><br /></p>
+<p>表示されたプラグインの「Install」ボタンをクリックします。</p>
+<div id="androidStudio14" class="image">
+<img src="images/10-commandlinetools/androidStudio14.png" alt="Flutterプラグインのインストール" class="img width-070per" />
+<p class="caption">
+図10.4: Flutterプラグインのインストール
+</p>
+</div>
+<p><br /></p>
+<p>すべてのプラグインをインストールが完了すると、Android Studioを再起動します。</p>
+<div id="androidStudio14-1" class="image">
+<img src="images/10-commandlinetools/androidStudio14-1.png" alt="Dartプラグインのインストール" class="img width-070per" />
+<p class="caption">
+図10.5: Dartプラグインのインストール
+</p>
+</div>
+<p>以上で、Flutter開発環境の作成が完了しました。</p>
+<p><br /></p>
+<p>スタートアッププロジェクトを作成してみましょう。</p>
 
         </main>
         <nav class="page-navi">

@@ -175,7 +175,7 @@ Flutterのインストールが完了しました。開発環境を整えるに�
  > flutter doctor -v
  Running "flutter pub get" in flutter_tools...                       5.1s
  [✓] Flutter (Channel stable, 3.0.5, on macOS 12.5 21G72 darwin-arm, locale en-CA)
-     • Flutter version 3.0.5 at /Users/kazuyainaba/.asdf/installs/flutter/3.0.5-stable
+     • Flutter version 3.0.5 at /Users/ユーザー名/.asdf/installs/flutter/3.0.5-stable
      • Upstream repository https://github.com/flutter/flutter.git
      • Framework revision f1875d570e (5 weeks ago), 2022-07-13 11:24:16 -0700
      • Engine revision e85ea0e79c

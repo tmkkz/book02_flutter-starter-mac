@@ -23,7 +23,7 @@ Google PlayやApple Storeで公開するためには、それぞれに開発者�
 など、膨大な作業が必要だと諦めていたのではありませんか？
 
 //blankline
-実は、Flutterを使うことでAndroid用、iPhone用のモバイルアプリを簡単に
+実は、Flutterを使うことでAndroid用、iPhone用のモバイルアプリを簡単に、
 
 //blankline
  Flutterでは、ウィジェット（ウィジェット）と呼ばれる部品を組み合わせて表示するページを作成します。

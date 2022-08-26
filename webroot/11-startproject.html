@@ -6,6 +6,7 @@
     <title>プロジェクトのスタート | FlutterでAndroid、iPhoneアプリ開発</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/webstyle.css" />
+    <link rel="next" title="Androidエミュレータ" href="12-emulator_android.html">
     <link rel="prev" title="command-line toolsのインストール" href="10-commandlinetools.html">
     <meta name="generator" content="Re:VIEW Starter">
   </head>
@@ -24,11 +25,19 @@
     <li class="toc-chapter"><a href="./04-asdf.html">4 バージョン管理ツールasdfのインストール</a></li>
     <li class="toc-chapter"><a href="./05-flutter.html">5 Flutterのインストール</a></li>
     <li class="toc-chapter"><a href="./06-xcodes.html">6 Xcodeのインストール</a></li>
-    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール</a></li>
-    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPodsのインストール</a></li>
-    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudioのインストール</a></li>
+    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール後の確認</a></li>
+    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPods</a></li>
+    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudio</a></li>
     <li class="toc-chapter"><a href="./10-commandlinetools.html">10 command-line toolsのインストール</a></li>
-    <li class="toc-chapter"><a href="./11-startproject.html">11 プロジェクトのスタート</a></li>
+    <li class="toc-chapter"><a href="./11-startproject.html">11 プロジェクトのスタート</a>
+      <ul class="toc toc-2">
+        <li class="toc-section"><a href="#h11-1">11.1 スタートアッププロジェクトを作る</a></li>
+      </ul>
+    </li>
+    <li class="toc-chapter"><a href="./12-emulator_android.html">12 Androidエミュレータ</a></li>
+    <li class="toc-chapter"><a href="./13-emulator_ios.html">13 iPhoneエミュレータ</a></li>
+    <li class="toc-chapter"><a href="./14-debug.html">14 エミュレータでデバッグ</a></li>
+    <li class="toc-chapter"><a href="./15-ending.html">15 おわりに</a></li>
 </ul>
       </nav>
       <div class="page-inner">
@@ -36,10 +45,75 @@
         </header>
         <main class="page-main">
 <h1 id="id_11-startproject" class="boldlines center twolines"><a id="h11"></a><span class="secno">第11章</span> <br/>プロジェクトのスタート</h1>
+<div class="abstract">
+<p>Android Studioでスタートアッププロジェクトを作成します。</p>
+<p>ウィザードに沿って作成するだけで、あっと言う間にモバイルアプリができあがります。</p>
+</div>
+
+<h2 class="grayback"><a id="h11-1"></a><span class="secno">11.1</span> スタートアッププロジェクトを作る</h2>
+<p>Android Studioを起動します。Flutterプラグインをインストールしましたので、「New Flutter Project」を選択できるようになっています。</p>
+<div id="androidStudio15" class="image">
+<img src="images/11-startproject/androidStudio15.png" alt="Android Studio起動" class="img width-070per" />
+<p class="caption">
+図11.1: Android Studio起動
+</p>
+</div>
+<p><br /></p>
+<p>「New Flutter Project」をクリックすると、「flutter SDK path」を入力、または選択します。</p>
+<div id="androidStudio16" class="image">
+<img src="images/11-startproject/androidStudio16.png" alt="Flutter SDK pathの指定" class="img width-070per" />
+<p class="caption">
+図11.2: Flutter SDK pathの指定
+</p>
+</div>
+<p><br /></p>
+<p>asdfを使用してFlutterをインストールした場合には、ユーザーホーム（/Users/ユーザー名/.asdf）以下のフォルダにあります。</p>
+<div id="asdf02" class="image">
+<img src="images/11-startproject/asdf02.png" alt="Flutter SDKのインストール場所" class="img width-070per" />
+<p class="caption">
+図11.3: Flutter SDKのインストール場所
+</p>
+</div>
+<p><br /></p>
+<p>プロジェクトに関する情報を入力します。</p>
+<ul>
+<li>Project name: プロジェクトの名前（flutterは原則単語をアンダースコアでつなぐ）
+</li>
+<li>Project location: プロジェクト保存先
+</li>
+<li>Description: プロジェクトの詳細
+</li>
+<li>Project type: Application/Plugin/Package/Moduleの選択があります。
+</li>
+<li>Organization: Apple Developperに登録したIdentifire
+</li>
+<li>Android language: Android用に使用するプログラミング言語 Java/Kotlin
+</li>
+<li>iOS language: iOS用に使用するプログラミング言語 Objective-C/Swift
+</li>
+<li>Publication: 出力するプラットフォーム　Android/iOS/Linux/MacOS/Web/Windows
+  以上の入力が完了しましたら、「Finish」ボタンをクリックします。
+</li>
+</ul>
+<div id="androidStudio17" class="image">
+<img src="images/11-startproject/androidStudio17.png" alt="desc" class="img width-070per" />
+<p class="caption">
+図11.4: desc
+</p>
+</div>
+<p>flutterコマンドが実行され、スタートアッププロジェクトが作成されます。後は、魔改造するだけです。</p>
+<div id="androidStudio18" class="image">
+<img src="images/11-startproject/androidStudio18.png" alt="desc" class="img width-070per" />
+<p class="caption">
+図11.5: desc
+</p>
+</div>
+<p>次に、作成されたプロジェクトをエミュレータで動かしてみましょう。</p>
 
         </main>
         <nav class="page-navi">
           <a href="10-commandlinetools.html" class="page-prev">&#9664;</a>
+          <a href="12-emulator_android.html" class="page-next">&#9654;</a>
         </nav>
         <footer>
         </footer>

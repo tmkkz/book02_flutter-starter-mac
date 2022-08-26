@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>AndroidStudioのインストール | FlutterでAndroid、iPhoneアプリ開発</title>
+    <title>AndroidStudio | FlutterでAndroid、iPhoneアプリ開発</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/webstyle.css" />
     <link rel="next" title="command-line toolsのインストール" href="10-commandlinetools.html">
-    <link rel="prev" title="CocoaPodsのインストール" href="08-cocoapods.html">
+    <link rel="prev" title="CocoaPods" href="08-cocoapods.html">
     <meta name="generator" content="Re:VIEW Starter">
   </head>
   <body>
@@ -25,18 +25,182 @@
     <li class="toc-chapter"><a href="./04-asdf.html">4 バージョン管理ツールasdfのインストール</a></li>
     <li class="toc-chapter"><a href="./05-flutter.html">5 Flutterのインストール</a></li>
     <li class="toc-chapter"><a href="./06-xcodes.html">6 Xcodeのインストール</a></li>
-    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール</a></li>
-    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPodsのインストール</a></li>
-    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudioのインストール</a></li>
+    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール後の確認</a></li>
+    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPods</a></li>
+    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudio</a>
+      <ul class="toc toc-2">
+        <li class="toc-section"><a href="#h9-1">9.1 Android Studioのインストール</a></li>
+        <li class="toc-section"><a href="#h9-2">9.2 Android Studioのセットアップ</a></li>
+        <li class="toc-section"><a href="#h9-3">9.3 flutter doctorの確認</a></li>
+      </ul>
+    </li>
     <li class="toc-chapter"><a href="./10-commandlinetools.html">10 command-line toolsのインストール</a></li>
     <li class="toc-chapter"><a href="./11-startproject.html">11 プロジェクトのスタート</a></li>
+    <li class="toc-chapter"><a href="./12-emulator_android.html">12 Androidエミュレータ</a></li>
+    <li class="toc-chapter"><a href="./13-emulator_ios.html">13 iPhoneエミュレータ</a></li>
+    <li class="toc-chapter"><a href="./14-debug.html">14 エミュレータでデバッグ</a></li>
+    <li class="toc-chapter"><a href="./15-ending.html">15 おわりに</a></li>
 </ul>
       </nav>
       <div class="page-inner">
         <header class="page-header">
         </header>
         <main class="page-main">
-<h1 id="id_09-androidstudio" class="boldlines center twolines"><a id="h9"></a><span class="secno">第9章</span> <br/>AndroidStudioのインストール</h1>
+<h1 id="id_09-androidstudio" class="boldlines center twolines"><a id="h9"></a><span class="secno">第9章</span> <br/>AndroidStudio</h1>
+<div class="abstract">
+<p>Android Studioは、JetbarainsのIDEをGoogleがAndroidアプリ開発用に提供しています。</p>
+<p>Andoroid SDKのバージョン毎のインストールやAndroid Emulatorの作成などができ、devToolsなども含まれていますので、Androidアプリ開発では必須といえます。</p>
+</div>
+
+<h2 class="grayback"><a id="h9-1"></a><span class="secno">9.1</span> Android Studioのインストール</h2>
+<p>Android Studioのインストールは、<a href="https://developer.android.com/studio" class="link">Android Studio</a>サイトからインストーラをダウンロードできます。</p>
+<div id="androidStudio01" class="image">
+<img src="images/09-androidstudio/androidStudio01.png" alt="Android Studioのサイト" class="img width-070per" />
+<p class="caption">
+図9.1: Android Studioのサイト
+</p>
+</div>
+<p>「Download Android Studio」ボタンをクリックすると「ライセンス許諾」が開きます。下までスクロールし「同意する」チェックボックスにチェックをします。自分のMacのチップに合わせ「Intel chip」、「Apple chip」のボタンをクリックするとダウロードが開始します。</p>
+<div id="androidStudio01-1" class="image">
+<img src="images/09-androidstudio/androidStudio01-1.png" alt="ライセンス許諾" class="img width-070per" />
+<p class="caption">
+図9.2: ライセンス許諾
+</p>
+</div>
+<p><br /></p>
+<p>ダウンロードした「android-studio-2021.2.1.16-mac_arm.dmg」を開きます。</p>
+<div id="androidStudio02" class="image">
+<img src="images/09-androidstudio/androidStudio02.png" alt="ダウンロードしたパッケージを開く" class="img width-070per" />
+<p class="caption">
+図9.3: ダウンロードしたパッケージを開く
+</p>
+</div>
+
+<h2 class="grayback"><a id="h9-2"></a><span class="secno">9.2</span> Android Studioのセットアップ</h2>
+<p>Launchpadなどからインストールした「Android Studio」を開きます。</p>
+<p><br /></p>
+<p>初回はセットアップ画面が起動します。最初に「使用状況をGoogleに送る」かを聞かれます。どちらを選択されてもかまいません。</p>
+<div id="androidStudio03" class="image">
+<img src="images/09-androidstudio/androidStudio03.png" alt="Android Stuidoセットアップ" class="img width-070per" />
+<p class="caption">
+図9.4: Android Stuidoセットアップ
+</p>
+</div>
+<p><br /></p>
+<p>ここからセットアップの開始です。</p>
+<div id="androidStudio04" class="image">
+<img src="images/09-androidstudio/androidStudio04.png" alt="Android Stuidoセットアップ" class="img width-070per" />
+<p class="caption">
+図9.5: Android Stuidoセットアップ
+</p>
+</div>
+<p><br /></p>
+<p>インストールタイプ「スタンダード」、「カスタム」の選択があります。</p>
+<div id="androidStudio05" class="image">
+<img src="images/09-androidstudio/androidStudio05.png" alt="Android Stuidoセットアップ" class="img width-070per" />
+<p class="caption">
+図9.6: Android Stuidoセットアップ
+</p>
+</div>
+<p><br /></p>
+<p>テーマの選択です。「ダーク」「ライト」がありますが、あとからでも変更できます。</p>
+<div id="androidStudio06" class="image">
+<img src="images/09-androidstudio/androidStudio06.png" alt="Android Stuidoセットアップ" class="img width-070per" />
+<p class="caption">
+図9.7: Android Stuidoセットアップ
+</p>
+</div>
+<p><br /></p>
+<p>確認画面になります。</p>
+<div id="androidStudio07" class="image">
+<img src="images/09-androidstudio/androidStudio07.png" alt="Android Stuidoセットアップ" class="img width-070per" />
+<p class="caption">
+図9.8: Android Stuidoセットアップ
+</p>
+</div>
+<p><br /></p>
+<p>「Andoloid-SDK-Licence」、「Android-SDK-arm-dbt-license」の確認画面です。赤ワクを選択し、それぞれ「Accept」を選択すると「Next」ボタンが有効になります。</p>
+<div id="androidStudio08" class="image">
+<img src="images/09-androidstudio/androidStudio08.png" alt="Android Stuidoセットアップ" class="img width-070per" />
+<p class="caption">
+図9.9: Android Stuidoセットアップ
+</p>
+</div>
+<p><br /></p>
+<p>必要なものがダウンロードされます。</p>
+<div id="androidStudio09" class="image">
+<img src="images/09-androidstudio/androidStudio09.png" alt="Android Stuidoセットアップ" class="img width-070per" />
+<p class="caption">
+図9.10: Android Stuidoセットアップ
+</p>
+</div>
+<p><br /></p>
+<p>セットアップ完了です。</p>
+<div id="androidStudio10" class="image">
+<img src="images/09-androidstudio/androidStudio10.png" alt="Android Stuidoセットアップ" class="img width-070per" />
+<p class="caption">
+図9.11: Android Stuidoセットアップ
+</p>
+</div>
+
+<h2 class="grayback"><a id="h9-3"></a><span class="secno">9.3</span> flutter doctorの確認</h2>
+<p>Android studioのインストールが完了しましたので、「flutter doctor -v」で確認します。</p>
+<div class="cmd-code">
+<span class="caption">flutter doctort -v</span>
+<pre class="list">  ❯ flutter doctor -v
+  [✓] Flutter (Channel stable, 3.0.5, on macOS 12.5 21G72 darwin-arm, locale en-CA)
+      • Flutter version 3.0.5 at /Users/ユーザー名/.asdf/installs/flutter/3.0.5-stable
+      • Upstream repository [https://github.com/flutter/flutter.git](https://github.com/flutter/flutter.git)
+      • Framework revision f1875d570e (5 weeks ago), 2022-07-13 11:24:16 -0700
+      • Engine revision e85ea0e79c
+      • Dart version 2.17.6
+      • DevTools version 2.12.2
+
+  [!] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+      • Android SDK at /Users/ユーザー名/Library/Android/sdk
+      ✗ cmdline-tools component is missing
+      Run `path/to/sdkmanager --install &quot;cmdline-tools;latest&quot;`
+      See [https://developer.android.com/studio/command-line](https://developer.android.com/studio/command-line) for more details.
+      ✗ Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See [https://flutter.dev/docs/get-started/install/macos#android-setup](https://flutter.dev/docs/get-started/install/macos#android-setup) for more details.
+
+  [✓] Xcode - develop for iOS and macOS (Xcode 13.4.1)
+      • Xcode at /Applications/Xcode-13.4.1.app/Contents/Developer
+      • CocoaPods version 1.11.3
+
+  [✓] Chrome - develop for the web
+      • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+  [✓] Android Studio (version 2021.2)
+      • Android Studio at /Applications/Android Studio.app/Contents
+      • Flutter plugin can be installed from:
+      🔨 [https://plugins.jetbrains.com/plugin/9212-flutter](https://plugins.jetbrains.com/plugin/9212-flutter)
+      • Dart plugin can be installed from:
+      🔨 [https://plugins.jetbrains.com/plugin/6351-dart](https://plugins.jetbrains.com/plugin/6351-dart)
+      • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+
+  [✓] VS Code (version 1.70.1)
+      • VS Code at /Applications/Visual Studio Code.app/Contents
+      • Flutter extension version 3.46.0
+
+  [✓] Connected device (2 available)
+      • macOS (desktop) • macos  • darwin-arm64   • macOS 12.5 21G72 darwin-arm
+      • Chrome (web)    • chrome • web-javascript • Google Chrome 104.0.5112.79
+
+  [✓] HTTP Host Availability
+      • All required HTTP hosts are available
+
+  ! Doctor found issues in 1 category.
+</pre>
+</div>
+<p>Android Studio欄の問題が解消されました。残りは、</p>
+<ol start="1" type="1">
+<li>Android toolchainでのcmdline-toolsがない。</li>
+<li>Androidのライセンス状況が不明</li>
+</ol>
+<p>と、2つ残されています。</p>
+<p>それでは、「cmdline-tools」をインストールします。</p>
 
         </main>
         <nav class="page-navi">

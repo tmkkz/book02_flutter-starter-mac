@@ -21,6 +21,10 @@ CHAPS:
   - 09-androidstudio.re
   - 10-commandlinetools.re
   - 11-startproject.re
+  - 12-emulator_android.re
+  - 13-emulator_ios.re
+  - 14-debug.re
+  - 15-ending.re
 
 ## 付録
 APPENDIX:

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Androidエミュレータ | FlutterでAndroid、iPhoneアプリ開発</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/webstyle.css" />
+    <link rel="next" title="iPhoneエミュレータ" href="13-emulator_ios.html">
+    <link rel="prev" title="プロジェクトのスタート" href="11-startproject.html">
+    <meta name="generator" content="Re:VIEW Starter">
+  </head>
+  <body>
+    <div class="page-outer">
+      <nav class="side-content">
+                <div class="rebuild">
+          <a href="javascript:void(0)" onclick="rebuildAndReloadForcedly()">Rebuild and Reload</a>
+        </div>
+                <a class="nav-title" href="index.html">FlutterでAndroid、iPhoneアプリ開発</a>
+<ul class="toc toc-1">
+    <li class="toc-chapter"><a href="./00-preface.html">はじめに</a></li>
+    <li class="toc-chapter"><a href="./01-whatis.html">1 Flutterとは？</a></li>
+    <li class="toc-chapter"><a href="./02-instraction.html">2 Flutter開発環境の作成手順</a></li>
+    <li class="toc-chapter"><a href="./03-homebrew.html">3 Homebrewのインストール</a></li>
+    <li class="toc-chapter"><a href="./04-asdf.html">4 バージョン管理ツールasdfのインストール</a></li>
+    <li class="toc-chapter"><a href="./05-flutter.html">5 Flutterのインストール</a></li>
+    <li class="toc-chapter"><a href="./06-xcodes.html">6 Xcodeのインストール</a></li>
+    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール後の確認</a></li>
+    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPods</a></li>
+    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudio</a></li>
+    <li class="toc-chapter"><a href="./10-commandlinetools.html">10 command-line toolsのインストール</a></li>
+    <li class="toc-chapter"><a href="./11-startproject.html">11 プロジェクトのスタート</a></li>
+    <li class="toc-chapter"><a href="./12-emulator_android.html">12 Androidエミュレータ</a>
+      <ul class="toc toc-2">
+        <li class="toc-section"><a href="#h12-1">12.1 Android Platform</a></li>
+        <li class="toc-section"><a href="#h12-2">12.2 エミュレータの作成</a></li>
+      </ul>
+    </li>
+    <li class="toc-chapter"><a href="./13-emulator_ios.html">13 iPhoneエミュレータ</a></li>
+    <li class="toc-chapter"><a href="./14-debug.html">14 エミュレータでデバッグ</a></li>
+    <li class="toc-chapter"><a href="./15-ending.html">15 おわりに</a></li>
+</ul>
+      </nav>
+      <div class="page-inner">
+        <header class="page-header">
+        </header>
+        <main class="page-main">
+<h1 id="id_12-emulator_android" class="boldlines center twolines"><a id="h12"></a><span class="secno">第12章</span> <br/>Androidエミュレータ</h1>
+<div class="abstract">
+<p>Android OSで動作するスマートフォン・タブレットは、毎年たくさんの製品がリリースされます。それらは画面サイズが違います。</p>
+<p>また、Android OSも毎年アップデートされます。しかし、すべての端末機のOSがアップデートされるわけではありません。</p>
+<p>そのため、動作確認は、すべてのAndroid OSで動作を確認し、すべての画面解像度でUIのチェックを行うべきですが、すべてを実機で検証するのは不可能でしょう。</p>
+<p>しかし、仕様（OSのバージョン、画面解像度）に即して、できる限りの端末機でチェックできるように、エミュレータ（疑似端末）を使いテストします。</p>
+</div>
+
+<h2 class="grayback"><a id="h12-1"></a><span class="secno">12.1</span> Android Platform</h2>
+<p>Android OSがエミュレータで実行できるように、各プラットフォームのSDKやimageをダウンロードします。Andoroid Studioで右上のアイコンをクリックしてSDKマネージャーを開きます。</p>
+<div id="sdkmng01" class="image">
+<img src="images/12-emulator_android/sdkmng01.png" alt="desc" class="img width-070per" />
+<p class="caption">
+図12.1: desc
+</p>
+</div>
+<p>ダウンロードするものは、</p>
+<dl>
+<dt>Android SDK Platform</dt>
+<dd>
+  各バージョン用にアプリをコンパイルするために必要
+</dd>
+<dt>System Image</dt>
+<dd>
+  Androidエミュレータ上で実行するために必要
+</dd>
+<dt>Sources for Android</dt>
+<dd>
+  プラットフォームのソースファイルがふくまれています。
+</dd>
+</dl>
+<p><br /></p>
+<p>各AndroidのバージョンとAPIレベルは、以下の通りです。</p>
+<dl>
+<dt>Android 13</dt>
+<dd>
+  コードネーム:Tiramisu APIレベル:33 リリース日:2022/8/15
+</dd>
+<dt>Android 12、12L</dt>
+<dd>
+  コードネーム: S APIレベル:31　リリース日:2021/10/4 <br />
+  コードネーム: Sv2 APIレベル:32　リリース日:2022/3/7
+</dd>
+<dt>Android 11</dt>
+<dd>
+  コードネーム: R APIレベル:30　リリース日:2020/9/8
+</dd>
+<dt>Android 10</dt>
+<dd>
+  コードネーム: Q APIレベル:29　リリース日:2019/9/3
+</dd>
+</dl>
+<div class="note">
+<h5>ChipがIntelかApple SiliconかでダウンロードするImageが違います。</h5>
+<p>エミュレータを動作させる、リリース用バイナリを作成するPCに搭載されているChipに合わせてダウンロードします。</p>
+</div>
+<div id="sdkmng02" class="image">
+<img src="images/12-emulator_android/sdkmng02.png" alt="desc" class="img width-070per" />
+<p class="caption">
+図12.2: desc
+</p>
+</div>
+
+<h2 class="grayback"><a id="h12-2"></a><span class="secno">12.2</span> エミュレータの作成</h2>
+<p>エミュレータを作成するために、 Android Studioの右上のデバイスマネージャーのアイコン、または、右橫にあるデバイスマネージャータブをクリックします。</p>
+<div id="emulator01" class="image">
+<img src="images/12-emulator_android/emulator01.png" alt="デバイスマネージャーを開く" class="img width-070per" />
+<p class="caption">
+図12.3: デバイスマネージャーを開く
+</p>
+</div>
+<p><br /></p>
+<p>デフォルトで作成されているエミュレータを削除します。一番右の下向き矢印をクリックし、「Delete」を選択します。</p>
+<div id="emulator01-1" class="image">
+<img src="images/12-emulator_android/emulator01-1.png" alt="デフォルトのエミュレータを削除" class="img width-070per" />
+<p class="caption">
+図12.4: デフォルトのエミュレータを削除
+</p>
+</div>
+<p><br /></p>
+<p>「Create device」ボタンをクリックします。</p>
+<div id="emulator01-2" class="image">
+<img src="images/12-emulator_android/emulator01-2.png" alt="新規エミュレータの作成" class="img width-070per" />
+<p class="caption">
+図12.5: 新規エミュレータの作成
+</p>
+</div>
+<p><br /></p>
+<p>新規デバイス作成画面が開きます。適当なデバイスを選択してください。今回は、Pixel5を選択しました。「Next」ボタンをクリックします。</p>
+<div id="emulator02" class="image">
+<img src="images/12-emulator_android/emulator02.png" alt="デバイスマネージャーを開く" class="img width-070per" />
+<p class="caption">
+図12.6: デバイスマネージャーを開く
+</p>
+</div>
+<p><br /></p>
+<p>デバイスに使用するイメージを選択します。</p>
+<p>Pixel5の販売時の仕様は、</p>
+<ul>
+<li>Android 11 -&gt; APIレベル30
+</li>
+<li>6.0inch フルスクリーン 1,080 x 2,340
+</li>
+<li>8GBメモリ、128GBストレージ
+</li>
+</ul>
+<p>のため、APIレベル30を選択しています。「Next」ボタンをクリックします。</p>
+<div id="emulator03" class="image">
+<img src="images/12-emulator_android/emulator03.png" alt="APIレベルの選択" class="img width-070per" />
+<p class="caption">
+図12.7: APIレベルの選択
+</p>
+</div>
+<p><br /></p>
+<p>確認画面になりますが、「Show Advanced Settings」ボタンをクリックします。</p>
+<div id="emulator04" class="image">
+<img src="images/12-emulator_android/emulator04.png" alt="設定を変更する" class="img width-070per" />
+<p class="caption">
+図12.8: 設定を変更する
+</p>
+</div>
+<p><br /></p>
+<p>メモリ、ストレージを4GBに増やします。エミュレータの動作速度、ホストPCのスペックなどのトレードオフがありますので自由に決めてください。</p>
+<p><br /></p>
+<p>「Finish」ボタンをクリックします。</p>
+<div id="emulator05" class="image">
+<img src="images/12-emulator_android/emulator05.png" alt="メモリ、ストレージを増やす" class="img width-070per" />
+<p class="caption">
+図12.9: メモリ、ストレージを増やす
+</p>
+</div>
+<p><br /></p>
+<p>デバイスマネージャーに作成したエミュレータが表示されます。右向き三角アイコンで実行します。</p>
+<div id="emulator06" class="image">
+<img src="images/12-emulator_android/emulator06.png" alt="エミュレータを起動" class="img width-070per" />
+<p class="caption">
+図12.10: エミュレータを起動
+</p>
+</div>
+<p><br /></p>
+<p>エミュレータウィンドウでエミュレータが起動します。歯車アイコンをクリックし、「View Mode」&gt;「Float」を選択すると、エミュレータウィンドウを自由に移動させることができます。</p>
+<div id="emulator07" class="image">
+<img src="images/12-emulator_android/emulator07.png" alt="エミュレータウィンドウをFloatViewで" class="img width-070per" />
+<p class="caption">
+図12.11: エミュレータウィンドウをFloatViewで
+</p>
+</div>
+<p><br /></p>
+<p>エミュレータは、作成された時点では英語となっていますので日本語化します。マウスで下から上にフリックします。</p>
+<div id="emulator08" class="image">
+<img src="images/12-emulator_android/emulator08.png" alt="エミュレータを日本語化" class="img width-070per" />
+<p class="caption">
+図12.12: エミュレータを日本語化
+</p>
+</div>
+<p><br /></p>
+<p>「Settings」を選択します。</p>
+<div id="emulator09" class="image">
+<img src="images/12-emulator_android/emulator09.png" alt="設定アプリを選択" class="img width-070per" />
+<p class="caption">
+図12.13: 設定アプリを選択
+</p>
+</div>
+<p><br /></p>
+<p>「System」を選択します。</p>
+<div id="emulator10" class="image">
+<img src="images/12-emulator_android/emulator10.png" alt="設定からシステムを選択" class="img width-070per" />
+<p class="caption">
+図12.14: 設定からシステムを選択
+</p>
+</div>
+<p><br /></p>
+<p>「Languages&amp;input」を選択します。</p>
+<div id="emulator11" class="image">
+<img src="images/12-emulator_android/emulator11.png" alt="言語と入力を選択" class="img width-070per" />
+<p class="caption">
+図12.15: 言語と入力を選択
+</p>
+</div>
+<p><br /></p>
+<p>「Languages」を選択します。</p>
+<div id="emulator12" class="image">
+<img src="images/12-emulator_android/emulator12.png" alt="言語を選択" class="img width-070per" />
+<p class="caption">
+図12.16: 言語を選択
+</p>
+</div>
+<p><br /></p>
+<p>「Add a language」を選択します。</p>
+<div id="emulator13" class="image">
+<img src="images/12-emulator_android/emulator13.png" alt="言語を追加を選択" class="img width-070per" />
+<p class="caption">
+図12.17: 言語を追加を選択
+</p>
+</div>
+<p><br /></p>
+<p>「日本語」を選択します。</p>
+<div id="emulator14" class="image">
+<img src="images/12-emulator_android/emulator14.png" alt="日本語を選択" class="img width-070per" />
+<p class="caption">
+図12.18: 日本語を選択
+</p>
+</div>
+<p><br /></p>
+<p>追加された「日本語」を「English」の上に移動させます。</p>
+<div id="emulator15" class="image">
+<img src="images/12-emulator_android/emulator15.png" alt="日本語を優先" class="img width-070per" />
+<p class="caption">
+図12.19: 日本語を優先
+</p>
+</div>
+<p><br /></p>
+<p>日本語化できました。</p>
+<div id="emulator16" class="image">
+<img src="images/12-emulator_android/emulator16.png" alt="日本語化完了" class="img width-070per" />
+<p class="caption">
+図12.20: 日本語化完了
+</p>
+</div>
+
+        </main>
+        <nav class="page-navi">
+          <a href="11-startproject.html" class="page-prev">&#9664;</a>
+          <a href="13-emulator_ios.html" class="page-next">&#9654;</a>
+        </nav>
+        <footer>
+        </footer>
+      </div>
+    </div>
+    <script>
+function rebuildAndReloadForcedly() {
+  fetch('/rebuild.js').then((resp)=>{
+    resp.text().then((text)=>{ eval(text); });
+  });
+}
+    </script>
+    <script src="/rebuild.js?file=12-emulator_android.re"></script>
+  </body>
+</html>
+<!-- layout.html5.erb -->

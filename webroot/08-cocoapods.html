@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>CocoaPodsのインストール | FlutterでAndroid、iPhoneアプリ開発</title>
+    <title>CocoaPods | FlutterでAndroid、iPhoneアプリ開発</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/webstyle.css" />
-    <link rel="next" title="AndroidStudioのインストール" href="09-androidstudio.html">
-    <link rel="prev" title="Xcodeのインストール" href="07-xcode.html">
+    <link rel="next" title="AndroidStudio" href="09-androidstudio.html">
+    <link rel="prev" title="Xcodeのインストール後の確認" href="07-xcode.html">
     <meta name="generator" content="Re:VIEW Starter">
   </head>
   <body>
@@ -25,18 +25,128 @@
     <li class="toc-chapter"><a href="./04-asdf.html">4 バージョン管理ツールasdfのインストール</a></li>
     <li class="toc-chapter"><a href="./05-flutter.html">5 Flutterのインストール</a></li>
     <li class="toc-chapter"><a href="./06-xcodes.html">6 Xcodeのインストール</a></li>
-    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール</a></li>
-    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPodsのインストール</a></li>
-    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudioのインストール</a></li>
+    <li class="toc-chapter"><a href="./07-xcode.html">7 Xcodeのインストール後の確認</a></li>
+    <li class="toc-chapter"><a href="./08-cocoapods.html">8 CocoaPods</a>
+      <ul class="toc toc-2">
+        <li class="toc-section"><a href="#h8-1">8.1 CocoaPodsのインストール</a></li>
+        <li class="toc-section"><a href="#h8-2">8.2 flutter doctorでの確認</a></li>
+      </ul>
+    </li>
+    <li class="toc-chapter"><a href="./09-androidstudio.html">9 AndroidStudio</a></li>
     <li class="toc-chapter"><a href="./10-commandlinetools.html">10 command-line toolsのインストール</a></li>
     <li class="toc-chapter"><a href="./11-startproject.html">11 プロジェクトのスタート</a></li>
+    <li class="toc-chapter"><a href="./12-emulator_android.html">12 Androidエミュレータ</a></li>
+    <li class="toc-chapter"><a href="./13-emulator_ios.html">13 iPhoneエミュレータ</a></li>
+    <li class="toc-chapter"><a href="./14-debug.html">14 エミュレータでデバッグ</a></li>
+    <li class="toc-chapter"><a href="./15-ending.html">15 おわりに</a></li>
 </ul>
       </nav>
       <div class="page-inner">
         <header class="page-header">
         </header>
         <main class="page-main">
-<h1 id="id_08-cocoapods" class="boldlines center twolines"><a id="h8"></a><span class="secno">第8章</span> <br/>CocoaPodsのインストール</h1>
+<h1 id="id_08-cocoapods" class="boldlines center twolines"><a id="h8"></a><span class="secno">第8章</span> <br/>CocoaPods</h1>
+<div class="abstract">
+<p>「CocoaPods」とは、Swift、Objective-Cプロジェクトの依存関係を管理してくれるものです。</p>
+<p>Homebrewと同じように、SwiftやObjective-Cプロジェクトに必要なプログラムをインストールでき、そのプログラムが依存するライブラリを自動的にインストールしてくれるものです。</p>
+</div>
+
+<h2 class="grayback"><a id="h8-1"></a><span class="secno">8.1</span> CocoaPodsのインストール</h2>
+<p>　CocoaPodsは、プログラミング言語「Ruby」の依存関係を管理する「gem」を使ってインストールします。</p>
+<p><br /></p>
+<p>しかし、gemはRubyのバージョンに影響されます。macOS Montereyでのディフォルトは、「ruby-2.6.8」で、最新版は「ruby-3.1.2」です。</p>
+<p><br /></p>
+<p>メジャーバージョンも異なるため、どんな影響がでるのか不明です（影響なしの場合もあります）。これがバージョンの違いによる依存関係の問題です。</p>
+<p><br /></p>
+<p>それを避ける方法としては、依存関係を自動で解決してくれるHomebrewを使います。</p>
+
+<h3 class="symbol"><a id="h8-1-1"></a><span class="secno">8.1.1</span> gemでインストール</h3>
+<p>自分でトラブルを解決できる方は、gemを使ってインストールできます。</p>
+<div class="cmd-code">
+<span class="caption">gemを使ってCocoaPodsをインストール</span>
+<pre class="list"> &gt; sudo gem update --system <span class="balloon">← gemをさいしんの状態にする</span>
+ &gt; sudo gem install cocoapods <span class="balloon">← CocoaPodsのインストール</span>
+</pre>
+</div>
+
+<h3 class="symbol"><a id="h8-1-2"></a><span class="secno">8.1.2</span> Homebewでインストール</h3>
+<p>Homebrewを使ってインストールする場合は、ターミナルに「brew install cocoapods」と入力しエンターキーを押します。</p>
+<div class="cmd-code">
+<span class="caption">HomebrewでCocoaPodsをインストール</span>
+<pre class="list">  &gt; brew install cocoapods
+  Warning: Treating cocoapods as a formula. For the cask, use homebrew/cask/cocoapods
+  ==&gt; Downloading https://ghcr.io/v2/homebrew/core/ruby/manifests/3.1.2
+  ######################################################################## 100.0%
+  ==&gt; Downloading https://ghcr.io/v2/homebrew/core/ruby/blobs/sha256:・・
+  ==&gt; Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256・・
+  ######################################################################## 100.0%
+  ==&gt; Downloading https://ghcr.io/v2/homebrew/core/cocoapods/manifests/1.11.3
+  ######################################################################## 100.0%
+  ==&gt; Downloading https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256・・
+  ==&gt; Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256・・
+  ######################################################################## 100.0%
+  ==&gt; Installing dependencies for cocoapods: ruby
+  ==&gt; Installing cocoapods dependency: ruby
+  ==&gt; Pouring ruby--3.1.2.arm64_monterey.bottle.tar.gz
+  🍺  /opt/homebrew/Cellar/ruby/3.1.2: 15,996 files, 42.8MB
+  ==&gt; Installing cocoapods
+  ==&gt; Pouring cocoapods--1.11.3.arm64_monterey.bottle.tar.gz
+  🍺  /opt/homebrew/Cellar/cocoapods/1.11.3: 13,496 files, 28.3MB
+  ==&gt; Running `brew cleanup cocoapods`...
+  Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+  Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+</pre>
+</div>
+
+<h2 class="grayback"><a id="h8-2"></a><span class="secno">8.2</span> flutter doctorでの確認</h2>
+<p>CocoaPodsのインストールが完了しましたので、「flutter doctor -v」で確認します。</p>
+<div class="cmd-code">
+<span class="caption">flutter doctor -vで確認</span>
+<pre class="list">  &gt; flutter doctor -v
+  [✓] Flutter (Channel stable, 3.0.5, on macOS 12.5 21G72 darwin-arm, locale en-CA)
+      • Flutter version 3.0.5 at /Users/ユーザー名8/.asdf/installs/flutter/3.0.5-stable
+      • Upstream repository https://github.com/flutter/flutter.git
+      • Framework revision f1875d570e (5 weeks ago), 2022-07-13 11:24:16 -0700
+      • Engine revision e85ea0e79c
+      • Dart version 2.17.6
+      • DevTools version 2.12.2
+
+  [✗] Android toolchain - develop for Android devices
+      ✗ Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/docs/get-started/install/macos#android-setup for detailed instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+  [✓] Xcode - develop for iOS and macOS (Xcode 13.4.1)
+      • Xcode at /Applications/Xcode-13.4.1.app/Contents/Developer
+      • CocoaPods version 1.11.3
+
+  [✓] Chrome - develop for the web
+      • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+  [!] Android Studio (not installed)
+      • Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/docs/get-started/install/macos#android-setup for detailed instructions).
+
+  [✓] Connected device (2 available)
+      • macOS (desktop) • macos  • darwin-arm64   • macOS 12.5 21G72 darwin-arm
+      • Chrome (web)    • chrome • web-javascript • Google Chrome 104.0.5112.79
+
+  [✓] HTTP Host Availability
+      • All required HTTP hosts are available
+
+  ! Doctor found issues in 2 categories.
+</pre>
+</div>
+<p>Xcodeの欄の問題が解決され、2つのカテゴリとなりました。</p>
+<ol start="1" type="1">
+<li>Android toolchain</li>
+<li>Android studio</li>
+</ol>
+<p>の2点が問題として表示されています。</p>
+<p>次に、Android Studioをインストールします。</p>
 
         </main>
         <nav class="page-navi">
