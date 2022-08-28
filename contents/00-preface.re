@@ -94,7 +94,7 @@ Xcode（統合開発ツール）で、プログラミング言語ObjectivC、ま
 クロスプラットフォーム開発環境で使われているのは、
 
  * React Native -- JavaScript
- * Xamarin -- C#
+ * Xamarin -- C# <--本書執筆中にXamarinのサポート終了が発表されました。
  * Flutter -- Dart
 
 などがあります。

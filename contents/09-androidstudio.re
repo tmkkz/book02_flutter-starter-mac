@@ -1,4 +1,4 @@
-={09-androidstudio} AndroidStudio
+={09-androidstudio} Android Studio
 
 //abstract{
   Android Studioは、JetbarainsのIDEをGoogleがAndroidアプリ開発用に提供しています。

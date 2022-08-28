@@ -1,4 +1,4 @@
-={06-xcodes} Xcodeのインストール
+={06-xcodes} Xcodes
 //abstract{
   XcodeはAppleが提供するシステム統合開発環境です。統合開発環境もFlutterなどのフレームワークやプログラミング言語と同じように
   macOSと伴にバージョンアップされます。

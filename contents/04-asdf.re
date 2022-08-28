@@ -1,4 +1,4 @@
-={04-asdf} バージョン管理ツールasdfのインストール
+={04-asdf} バージョン管理ツールasdf
 
 //abstract{
 そもそも、バージョン管理ツールとは？、また、なぜ必要なの？
@@ -24,6 +24,8 @@ Flutterもそうですが、Python、Java、Ruby、Node.jsなどの
 ができるように、バージョン管理ツールをインストールします。
 
 //}
+
+== asdfのインストール
 
 @<href>{https://asdf-vm.com, asdf本家サイト}
 

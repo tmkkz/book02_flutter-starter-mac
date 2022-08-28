@@ -169,7 +169,15 @@ Tools • Dart 2.16.2 • DevTools 2.9.2
 //}
 
 //blankline
-Flutterのインストールが完了しました。開発環境を整えるには「flutter doctor -v」を実行し不足しているものをインストールしていきます。
+複数のFlutterバージョンをインストールしましたが、いったいどこのフォルダへ、どのようにインストールされているのでしょうか？
+Finderで確認すると、以下のようにインストールされています。
+
+//image[asdf02][flutterの複数バージョンのインストール状況][scale=0.7]
+
+//blankline
+flutterをインストールできましたので、flutter開発環境の内容を、flutterコマンドで確認します。
+ターミナルに「flutter doctor」と入力しエンターキーを押すのですが、より詳しく表示されるように「-v」オプションを
+付けて確認してみます。
 
 //terminal[][flutter doctor -v]{
  > flutter doctor -v

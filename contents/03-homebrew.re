@@ -1,4 +1,4 @@
-={03_homebrew} Homebrewのインストール
+={03_homebrew} Homebrew
 
 //abstract{
   Homebrew（Mac、Linux用のパッケージマネージャー）をインストールします。すでにインストール済みの方はスキップしてください。
@@ -98,13 +98,20 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 Homebrewのインストールが完了しましたので、パスを通すために「~/.zshrc」に以下を追加してください。上記では
 「.zprofile」に追加するようにありますが、「.zshrc」に書込みます。
 
+//blankline
+
+#@# textlint-disable
+以下のコマンドを実行すると、「~/.zshrc」の最後の行へ「eval "$(/opt/homebrew/bin/brew shellenv)"」を追加します。
+「~/.zshrc」がない場合にはファイルを作成して追加します。
+#@# textlint-enable
+
 //note[.zprofileと.zshrcの違い]{
 こちらに、「@<href>{https://qiita.com/muran001/items/7b104d33f5ea3f75353f, zshの設定ファイルの読み込み順序と使い方Tipsまとめ}」
 良記事があります。
 //}
 
 //terminal[][homebrewのパスを通す]{
- > echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/ユーザー名/.zshrc
+ > echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
 
  > source ~/.zshrc @<balloon>{設定ファイル.zshrcの読み込み}
  > brew help @<balloon>{homebrewが動くかヘルプを表示}
@@ -122,3 +129,11 @@ Homebrewのインストールが完了しましたので、パスを通すため
 //}
 
 以上で、Homebrewのインストールが完了しました。
+
+最初に、「git」をインストールしてみましょう。ターミナルに「brew install git」と入力しエンターキーを押します。
+
+//terminal[][gitのインストール]{
+ > brew install git
+//}
+
+これだけで「git」がインストールできます。
