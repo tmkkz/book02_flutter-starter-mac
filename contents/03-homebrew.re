@@ -1,23 +1,25 @@
 ={03_homebrew} Homebrew
 
 //abstract{
-  Homebrew（Mac、Linux用のパッケージマネージャー）をインストールします。すでにインストール済みの方はスキップしてください。
+Homebrew（Mac、Linux用のパッケージマネージャー）をインストールします。すでにインストール済みの方はスキップしてください。
 
-　パッケージマネージャーとは、対象のプログラム・コマンド（たとえば、git）をインストールするときに、
+パッケージマネージャーとは、対象のプログラム・コマンド（たとえば、git）をインストールするときに、
 必要なライブラリなどを一括でインストールしてくれます。また、パッケージマネージャーでインストールしておけば、
 アップデートも一括で行えます。マシーンの引越し時にも、リストをコピーするだけで一括インストールができます。
 
-　今回の開発環境の作成では、
+今回の開発環境の作成では、
 
  * git --- Flutterの必須、
  * asdf --- Flutterのバージョン管理、
  * CocoaPods --- Swift、Objective-CでのCocoaプロジェクトの依存関係を管理、
  * Xcodes --- Xcodeのバージョン管理、
 
- をインストールするために使います。
+をインストールするために使います。
 
- 　ここでのバージョン管理とは、複数のバージョン（Flutter、Xcode）をインストールし、バージョンを切り替えて使えるようにすることです。
+ここでのバージョン管理とは、複数のバージョン（Flutter、Xcode）をインストールし、バージョンを切り替えて使えるようにすることです。
 //}
+
+//makechaptitlepage[toc=on]
 
 == Homebrewのインストール
 
@@ -38,6 +40,8 @@
 こちらに、macOSで使えるターミナルの比較をされた良記事@<href>{https://zenn.dev/kawarimidoll/articles/007449407cc78d, Macの端末をいろいろ検討した結果iTerm2になった}があります。
 
 //}
+
+//clearpage
 
 実行すると、以下のようになります。
 
@@ -74,6 +78,8 @@
  Press RETURN/ENTER to continue or any other key to abort:@<balloon>{実行するならエンターキー、止めるのであれば他のキーを押して}
 //}
 
+//clearpage
+
 ここで、エンターキーを押します。
 
 //terminal[][エンターキーを押して続行]{
@@ -109,6 +115,9 @@ Homebrewのインストールが完了しましたので、パスを通すため
 こちらに、「@<href>{https://qiita.com/muran001/items/7b104d33f5ea3f75353f, zshの設定ファイルの読み込み順序と使い方Tipsまとめ}」
 良記事があります。
 //}
+
+//image[0301][][scale=0.6, pos=H]
+//clearpage
 
 //terminal[][homebrewのパスを通す]{
  > echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc

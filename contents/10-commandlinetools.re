@@ -1,19 +1,43 @@
 ={10-commandlinetools} command-line toolsのインストール
+//abstract{
+  Android SDK Commandline toolsとは？
+//blankline
+開発に役立つツールがパッケージ化されています。Android Studioを使わない場合でも、別途ダウンロードできます。
+//}
+
+//makechaptitlepage[toc=on]
+== cmdlint-toolsとは？
+いくつかのツールがパッケージ化されています。
+
+: apkanalyzer
+    ビルドプロセスの完了後に APK の構成を分析できます。
+: avdmanager
+    コマンドラインから Android Virtual Device（AVD）を作成、管理できます。
+: lint
+    コードの構造品質に関する問題を検出、修正できるコードスキャン ツールです。
+: retrace
+    R8 でコンパイルされたアプリについて、retrace は難読化されたスタック トレースをデコードして元のソースコードにマッピングし直します。
+: sdkmanager
+    Android SDK のパッケージを表示、インストール、更新、アンインストールできます。
+
+//blankline
+Android Studioを使わないでインストールする場合には、ダウンロードしたzipを展開し、android_sdkフォルダ以下に置いてください。
+
+//clearpage
 == cmdline-toolsのインストール
 
 Android Studioを起動しますと初期画面が開きます。
 
-//image[androidStudio11][cmdlint-toolsのインストール][scale=0.7]
+//image[androidStudio11][cmdlint-toolsのインストール][scale=0.7, pos=H]
 
-//blankline
 中央にある「More Actions」をクリックし、「SDK-Manager」を選択します。
-//image[androidStudio12][cmdlint-toolsのインストール][scale=0.7]
+//image[androidStudio12][cmdlint-toolsのインストール][scale=0.7, pos=H]
 
-//blankline
+
 右下の「OK」ボタンの上に「Show Package Details」チェックボックスがありますので、チェックします。
 「Android SDK Command-line Toools」の欄をクリックすると、インストール可能な「cmdline-tools」の
 バージョンが表示されます。一番上の（latest）をチェックし、右下の「OK」ボタンをクリックするとインストールされます。
-//image[androidStudio13][cmdlint-toolsのインストール][scale=0.7]
+//image[androidStudio13][cmdlint-toolsのインストール][scale=0.7, pos=H]
 
 //blankline
 cmdline-toolsのインストールが完了しましたら、パスを通します。「.zshrc」に以下を追加し、再読み込みします。
@@ -31,8 +55,10 @@ cmdline-toolsのインストールが完了しましたら、パスを通しま�
 //}
 
 
+//blankline
 「flutter doctor -v」で確認します。
 
+//clearpage
 //terminal[][flutter doctor -v]{
   ❯ flutter doctor -v
   [✓] Flutter (Channel stable, 3.0.5, on macOS 12.5 21G72 darwin-arm, locale en-CA)
@@ -61,9 +87,9 @@ cmdline-toolsのインストールが完了しましたら、パスを通しま�
   [✓] Android Studio (version 2021.2)
       • Android Studio at /Applications/Android Studio.app/Contents
       • Flutter plugin can be installed from:
-      🔨 [https://plugins.jetbrains.com/plugin/9212-flutter](https://plugins.jetbrains.com/plugin/9212-flutter)
+      - [https://plugins.jetbrains.com/plugin/9212-flutter](https://plugins.jetbrains.com/plugin/9212-flutter)
       • Dart plugin can be installed from:
-      🔨 [https://plugins.jetbrains.com/plugin/6351-dart](https://plugins.jetbrains.com/plugin/6351-dart)
+      - [https://plugins.jetbrains.com/plugin/6351-dart](https://plugins.jetbrains.com/plugin/6351-dart)
       • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
 
   [✓] VS Code (version 1.70.1)
@@ -82,6 +108,7 @@ cmdline-toolsのインストールが完了しましたら、パスを通しま�
 
 あとひとつ、Androidのライセンスに関しての問題が解消されていません。
 
+//clearpage
 
 == Androidライセンス
 
@@ -101,7 +128,7 @@ cmdline-toolsのインストールが完了しましたら、パスを通しま�
 完了しましたら、再び「flutter doctor -v」で確認します。
 
 //terminal[][flutter doctor -v]{
-  ❯ flutter doctor -v
+  > flutter doctor -v
   [✓] Flutter (Channel stable, 3.0.5, on macOS 12.5 21G72 darwin-arm, locale en-CA)
       • Flutter version 3.0.5 at /Users/ユーザー名/.asdf/installs/flutter/3.0.5-stable
       • Upstream repository [https://github.com/flutter/flutter.git](https://github.com/flutter/flutter.git)
@@ -156,6 +183,7 @@ cmdline-toolsのインストールが完了しましたら、パスを通しま�
 
 とありますので、Android Studioに2つのプラグインをインストールします。
 
+//clearpage
 
 == Android Studioへのプラグインのインストール
 
@@ -164,11 +192,11 @@ Android Stuidoを起動し、初期画面の左ペインにある「plugin」を
 
 //blankline
 表示されたプラグインの「Install」ボタンをクリックします。
-//image[androidStudio14][Flutterプラグインのインストール][scale=0.7]
+//image[androidStudio14][][scale=0.7, pos=H]
 
-//blankline
+//image[androidStudio14-1][][scale=0.7, pos=H]
+
 すべてのプラグインをインストールが完了すると、Android Studioを再起動します。
-//image[androidStudio14-1][Dartプラグインのインストール][scale=0.7]
 
 
 以上で、Flutter開発環境の作成が完了しました。

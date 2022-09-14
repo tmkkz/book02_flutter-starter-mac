@@ -2,20 +2,22 @@
 
 //abstract{
 そもそも、バージョン管理ツールとは？、また、なぜ必要なの？
-
+//blankline
 Flutterもそうですが、Python、Java、Ruby、Node.jsなどの
 プログラミング言語やフレームワークは日々更新され、ある程度の修正・機能追加が終わった時点で新バージョンとしてリリースされます。
 
+//blankline
 新バージョンがリリースされる度に開発環境を更新すれば良いのですが、開発中のプロジェクトに影響がないとはいえません。
 
-また、以前のバージョンで開発したプロジェクトの保守を異なるバージョンの開発環境で行うと、
+//blankline
+また、開発したときのバージョン異なるバージョンで保守を行うと、
 
  * 動かなくなったり、
  * 使用していたWigdgetなどが非推奨（deprecation）になった。
 
 など、予期せぬことが起こります。
 
-
+//blankline
 そのため、
 
  * PC全体で使えるデフォルトバージョンの指定、
@@ -24,6 +26,8 @@ Flutterもそうですが、Python、Java、Ruby、Node.jsなどの
 ができるように、バージョン管理ツールをインストールします。
 
 //}
+
+//makechaptitlepage[toc=on]
 
 == asdfのインストール
 
@@ -49,9 +53,9 @@ Flutterにもバージョン管理ツールとして、「asdf」、「fvm」な
  これは、各プログラミング言語・フレームワークをプラグインとして扱い、asdfにインストールするプラグイン毎にバージョン管理ができるためです。
 
 //blankline
- それでは、asdf本体のインストールを行います。asdfのインストールは、Homebrewを使います。
+ それでは、asdf本体のインストールは、Homebrewを使えば簡単です。
 
-//blankline
+//clearpage
  ターミナルに「brew install asdf」と入力しエンターキーを押します。
 
 //terminal[][asdfのインストール]{
@@ -79,13 +83,14 @@ Flutterにもバージョン管理ツールとして、「asdf」、「fvm」な
  /opt/homebrew/share/zsh/site-functions
 //}
 
- インストールが完了しましたので、「Caveats」にある指示に従い「~/.zshrc」にasdfのスクリプトが実行されるように、
+ インストールが完了しましたので、「Caveats」にある指示に従い「~/.zshrc」にasdfのスクリプトが実行されるように、@<br>{}
 
- . /opt/homebrew/opt/asdf/libexec/asdf.sh
+ @<strong>{. /opt/homebrew/opt/asdf/libexec/asdf.sh}
 
 
  を追加します。
 
+//blankline
  現時点での「~/.zshrc」は、
 
 //list[.zshrc][]{
@@ -98,8 +103,8 @@ Flutterにもバージョン管理ツールとして、「asdf」、「fvm」な
 
 があれば大丈夫です。
 
-//blankline
-設定ファイルを再度読み込みます。
+//clearpage
+設定ファイルを再読み込みます。
 
 //terminal[][.zshrcの再読み込み]{
  > source ~/.zshrc
@@ -148,7 +153,7 @@ Flutterのバージョン管理ができるように、「flutterプラグイン
 //blankline
 Flutterのインストールは、asdf経由で行います。asdf経由でインストール可能なFlutterのバージョンを確認します。
 
-//blankline
+//clearpage
 ターミナルに「asdf list all flutter」と入力しエンターキーを押します。
 
 //terminal[][asdfでインストール可能なFlutterのバージョン表示]{

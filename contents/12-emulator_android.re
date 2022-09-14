@@ -3,22 +3,25 @@
  Android OSで動作するスマートフォン・タブレットは、毎年たくさんの製品がリリースされます。
  それらは画面サイズが違います。
 
+//blankline
  また、Android OSも毎年アップデートされます。しかし、すべての端末機のOSがアップデートされるわけではありません。
 
+//blankline
  そのため、動作確認は、すべてのAndroid OSで動作を確認し、すべての画面解像度でUIのチェックを行うべきですが、
  すべてを実機で検証するのは不可能でしょう。
 
+//blankline
  しかし、仕様（OSのバージョン、画面解像度）に即して、できる限りの端末機でチェックできるように、エミュレータ（疑似端末）を使いテストします。
 
 //}
-
+//makechaptitlepage[toc=on]
 
 == Android Platform
 
 Android OSがエミュレータで実行できるように、各プラットフォームのSDKやimageをダウンロードします。
 Andoroid Studioで右上のアイコンをクリックしてSDKマネージャーを開きます。
 
-//image[sdkmng01][desc][scale=0.7]
+//image[sdkmng01][desc][scale=0.7, pos=H]
 
 ダウンロードするものは、
 
@@ -46,29 +49,30 @@ Andoroid Studioで右上のアイコンをクリックしてSDKマネージャ�
  エミュレータを動作させる、リリース用バイナリを作成するPCに搭載されているChipに合わせてダウンロードします。
 //}
 
-//image[sdkmng02][desc][scale=0.7]
+//image[sdkmng02][desc][scale=0.7, pos=H]
+
+//clearpage
 
 == エミュレータの作成
 
 エミュレータを作成するために、 Android Studioの右上のデバイスマネージャーのアイコン、または、右橫にある
 デバイスマネージャータブをクリックします。
 
-//image[emulator01][デバイスマネージャーを開く][scale=0.7]
+//image[emulator01][デバイスマネージャーを開く][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 デフォルトで作成されているエミュレータを削除します。一番右の下向き矢印をクリックし、「Delete」を選択します。
-//image[emulator01-1][デフォルトのエミュレータを削除][scale=0.7]
+//image[emulator01-1][デフォルトのエミュレータを削除][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 「Create device」ボタンをクリックします。
-//image[emulator01-2][新規エミュレータの作成][scale=0.7]
+//image[emulator01-2][][scale=0.7, pos=H]
 
-//blankline
 新規デバイス作成画面が開きます。適当なデバイスを選択してください。今回は、Pixel5を選択しました。
 「Next」ボタンをクリックします。
-//image[emulator02][デバイスマネージャーを開く][scale=0.7]
+//image[emulator02][][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 デバイスに使用するイメージを選択します。
 
 Pixel5の販売時の仕様は、
@@ -78,11 +82,11 @@ Pixel5の販売時の仕様は、
  * 8GBメモリ、128GBストレージ
 
 のため、APIレベル30を選択しています。「Next」ボタンをクリックします。
-//image[emulator03][APIレベルの選択][scale=0.7]
+//image[emulator03][APIレベルの選択][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 確認画面になりますが、「Show Advanced Settings」ボタンをクリックします。
-//image[emulator04][設定を変更する][scale=0.7]
+//image[emulator04][設定を変更する][scale=0.7, pos=H]
 
 //blankline
 メモリ、ストレージを4GBに増やします。エミュレータの動作速度、ホストPCのスペックなどのトレードオフがありますので
@@ -90,49 +94,49 @@ Pixel5の販売時の仕様は、
 
 //blankline
 「Finish」ボタンをクリックします。
-//image[emulator05][メモリ、ストレージを増やす][scale=0.7]
+//image[emulator05][メモリ、ストレージを増やす][scale=0.7, pos=H]
 
 //blankline
 デバイスマネージャーに作成したエミュレータが表示されます。右向き三角アイコンで実行します。
-//image[emulator06][エミュレータを起動][scale=0.7]
+//image[emulator06][エミュレータを起動][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 エミュレータウィンドウでエミュレータが起動します。歯車アイコンをクリックし、「View Mode」>「Float」を
 選択すると、エミュレータウィンドウを自由に移動させることができます。
-//image[emulator07][エミュレータウィンドウをFloatViewで][scale=0.7]
+//image[emulator07][エミュレータウィンドウをFloatViewで][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 エミュレータは、作成された時点では英語となっていますので日本語化します。マウスで下から上にフリックします。
-//image[emulator08][エミュレータを日本語化][scale=0.7]
+//image[emulator08][エミュレータを日本語化][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 「Settings」を選択します。
-//image[emulator09][設定アプリを選択][scale=0.7]
+//image[emulator09][設定アプリを選択][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 「System」を選択します。
-//image[emulator10][設定からシステムを選択][scale=0.7]
+//image[emulator10][設定からシステムを選択][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 「Languages&input」を選択します。
-//image[emulator11][言語と入力を選択][scale=0.7]
+//image[emulator11][言語と入力を選択][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 「Languages」を選択します。
-//image[emulator12][言語を選択][scale=0.7]
+//image[emulator12][言語を選択][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 「Add a language」を選択します。
-//image[emulator13][言語を追加を選択][scale=0.7]
+//image[emulator13][言語を追加を選択][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 「日本語」を選択します。
-//image[emulator14][日本語を選択][scale=0.7]
+//image[emulator14][日本語を選択][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 追加された「日本語」を「English」の上に移動させます。
-//image[emulator15][日本語を優先][scale=0.7]
+//image[emulator15][日本語を優先][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 日本語化できました。
-//image[emulator16][日本語化完了][scale=0.7]
+//image[emulator16][日本語化完了][scale=0.7, pos=H]

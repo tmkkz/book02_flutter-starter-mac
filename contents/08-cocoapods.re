@@ -6,6 +6,7 @@ Homebrewと同じように、SwiftやObjective-Cプロジェクトに必要な�
 そのプログラムが依存するライブラリを自動的にインストールしてくれるものです。
 //}
 
+//makechaptitlepage[toc=on]
 == CocoaPodsのインストール
 
 　CocoaPodsは、プログラミング言語「Ruby」の依存関係を管理する「gem」を使ってインストールします。
@@ -33,6 +34,7 @@ Homebrewと同じように、SwiftやObjective-Cプロジェクトに必要な�
 //}
 
 
+//clearpage
 === Homebewでインストール
 
 #@# textlint-disable
@@ -64,6 +66,7 @@ Homebrewを使ってインストールする場合は、ターミナルに「bre
   Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 //}
 
+//clearpage
 == flutter doctorでの確認
 
 CocoaPodsのインストールが完了しましたので、「flutter doctor -v」で確認します。
@@ -107,6 +110,7 @@ CocoaPodsのインストールが完了しましたので、「flutter doctor -v
   ! Doctor found issues in 2 categories.
 //}
 
+//clearpage
 Xcodeの欄の問題が解決され、2つのカテゴリとなりました。
 
  1. Android toolchain
@@ -114,5 +118,5 @@ Xcodeの欄の問題が解決され、2つのカテゴリとなりました。
 
  の2点が問題として表示されています。
 
-
+//blankline
  次に、Android Studioをインストールします。

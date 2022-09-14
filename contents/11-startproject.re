@@ -4,23 +4,22 @@
 
   ウィザードに沿って作成するだけで、あっと言う間にモバイルアプリができあがります。
 //}
-
+//makechaptitlepage[toc=on]
 == スタートアッププロジェクトを作る
 
 Android Studioを起動します。Flutterプラグインをインストールしましたので、「New Flutter Project」を
 選択できるようになっています。
-//image[androidStudio15][Android Studio起動][scale=0.7]
+//image[androidStudio15][][scale=0.7, pos=H]
 
-//blankline
 「New Flutter Project」をクリックすると、「flutter SDK path」を入力、または選択します。
 
-//image[androidStudio16][Flutter SDK pathの指定][scale=0.7]
+//image[androidStudio16][][scale=0.7, pos=H]
 
-//blankline
+
 asdfを使用してFlutterをインストールした場合には、ユーザーホーム（/Users/ユーザー名/.asdf）以下のフォルダにあります。
-//image[asdf02][Flutter SDKのインストール場所][scale=0.7]
+//image[asdf02][Flutter SDKのインストール場所][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 プロジェクトに関する情報を入力します。
 
 #@# textlint-disable
@@ -35,10 +34,10 @@ asdfを使用してFlutterをインストールした場合には、ユーザー
 #@# textlint-enable
   以上の入力が完了しましたら、「Finish」ボタンをクリックします。
 
-//image[androidStudio17][desc][scale=0.7]
+//image[androidStudio17][desc][scale=0.7, pos=H]
 
-
+//clearpage
 flutterコマンドが実行され、スタートアッププロジェクトが作成されます。後は、魔改造するだけです。
-//image[androidStudio18][desc][scale=0.7]
+//image[androidStudio18][desc][scale=0.7, pos=H]
 
 次に、作成されたプロジェクトをエミュレータで動かしてみましょう。

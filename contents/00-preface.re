@@ -2,6 +2,7 @@
 //blankline
 このたびは、「Flutter開発環境の作成-Mac版」を、手にしていただき誠にありがとうございます。
 
+//image[0001][][scale=0.7, pos=H]
 //blankline
 本書で使用しているイラストは、
 
@@ -18,6 +19,7 @@ CPUがIntel、Apple Siliconのどちらでも問題ありません。
 もし、本書に間違い、誤字脱字がございましたら
 @<href>{https://github.com/risingforce9zz/book02_flutter-dev-starter-mac, サポートサイト}にて
 issueを作成していただけると助かります。
+//image[0002][][scale=0.7, pos=H]
 
 //blankline
 === モバイルアプリケーション

@@ -2,6 +2,11 @@
 //abstract{
   Xcodeをインストールしましたので、再度、「flutter doctor -v」で確認します。
 //}
+
+//makechaptitlepage[toc=on]
+
+== Flutter開発環境の分析
+
 ターミナルに「flutter doctor -v」と入力しエンターキーを押します。
 //terminal[][Xcodeインストール後のflutter doctorの結果]{
   > flutter doctor -v
@@ -13,8 +18,8 @@
       • Dart version 2.17.6
       • DevTools version 2.12.2
 
-  [✗] Android toolchain - develop for Android devices
-      ✗ Unable to locate Android SDK.
+  [x] Android toolchain - develop for Android devices
+      x Unable to locate Android SDK.
       Install Android Studio from: https://developer.android.com/studio/index.html
       On first launch it will assist you in installing the Android SDK components.
       (or visit https://flutter.dev/docs/get-started/install/macos#android-setup for detailed instructions).
@@ -23,7 +28,7 @@
 
   [!] Xcode - develop for iOS and macOS (Xcode 13.4.1)
       • Xcode at /Applications/Xcode-13.4.1.app/Contents/Developer
-      ✗ CocoaPods not installed.
+      x CocoaPods not installed.
       CocoaPods is used to retrieve the iOS and macOS platform side's plugin code that responds to your plugin usage on the Dart side.
       Without CocoaPods, plugins will not work on iOS or macOS.
       For more info, see https://flutter.dev/platform-plugins
@@ -46,6 +51,7 @@
   ! Doctor found issues in 3 categories.
 //}
 
+//clearpage
 Xcodeの問題はなくなりましたが、
 
  1. CocoaPodsがインストールされていない。
@@ -53,5 +59,5 @@ Xcodeの問題はなくなりましたが、
  3. Android studio
 
  と問題が3カテゴリにあると表示されています。
-
+//blankline
  次に、「CocoaPods」をインストールします。

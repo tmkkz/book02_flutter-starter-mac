@@ -1,4 +1,4 @@
-={09-androidstudio} Android Studio
+={09-androidstudio} Android aStudio
 
 //abstract{
   Android Studioは、JetbarainsのIDEをGoogleがAndroidアプリ開発用に提供しています。
@@ -7,63 +7,64 @@
 含まれていますので、Androidアプリ開発では必須といえます。
 //}
 
+//makechaptitlepage[toc=on]
+
 == Android Studioのインストール
 
 Android Studioのインストールは、
 @<href>{https://developer.android.com/studio, Android Studio}サイトからインストーラをダウンロードできます。
 
-//image[androidStudio01][Android Studioのサイト][scale=0.7]
+//image[androidStudio01][Android Studioのサイト][scale=0.9, pos=H]
 
 「Download Android Studio」ボタンをクリックすると「ライセンス許諾」が開きます。下までスクロールし
 「同意する」チェックボックスにチェックをします。自分のMacのチップに合わせ「Intel chip」、「Apple chip」の
 ボタンをクリックするとダウロードが開始します。
 
-//image[androidStudio01-1][ライセンス許諾][scale=0.7]
+//image[androidStudio01-1][ライセンス許諾][scale=0.7, pos=H]
 
 //blankline
 #@# textlint-disable
 ダウンロードした「android-studio-2021.2.1.16-mac_arm.dmg」を開きます。
 #@# textlint-enable
 
-//image[androidStudio02][ダウンロードしたパッケージを開く][scale=0.7]
+//image[androidStudio02][ダウンロードしたパッケージを開く][scale=0.7, pos=H]
 
 == Android Studioのセットアップ
 
 Launchpadなどからインストールした「Android Studio」を開きます。
 
 //blankline
-初回はセットアップ画面が起動します。最初に「使用状況をGoogleに送る」かを聞かれます。どちらを選択されてもかまいません。
+初回はセットアップ画面が起動します。最初に「使用状況をGoogleに送る」かを聞かれます。
 
-//image[androidStudio03][Android Stuidoセットアップ][scale=0.7]
+//image[androidStudio03][Android Stuidoセットアップ][scale=0.7, pos=H]
 
 //blankline
 ここからセットアップの開始です。
-//image[androidStudio04][Android Stuidoセットアップ][scale=0.7]
+//image[androidStudio04][Android Stuidoセットアップ][scale=0.7, pos=H]
 
-//blankline
+
 インストールタイプ「スタンダード」、「カスタム」の選択があります。
-//image[androidStudio05][Android Stuidoセットアップ][scale=0.7]
+//image[androidStudio05][Android Stuidoセットアップ][scale=0.7, pos=H]
 
-//blankline
 テーマの選択です。「ダーク」「ライト」がありますが、あとからでも変更できます。
-//image[androidStudio06][Android Stuidoセットアップ][scale=0.7]
+//image[androidStudio06][Android Stuidoセットアップ][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 確認画面になります。
-//image[androidStudio07][Android Stuidoセットアップ][scale=0.7]
+//image[androidStudio07][Android Stuidoセットアップ][scale=0.7, pos=H]
 
 //blankline
 「Andoloid-SDK-Licence」、「Android-SDK-arm-dbt-license」の確認画面です。
 赤ワクを選択し、それぞれ「Accept」を選択すると「Next」ボタンが有効になります。
-//image[androidStudio08][Android Stuidoセットアップ][scale=0.7]
+//image[androidStudio08][Android Stuidoセットアップ][scale=0.7, pos=H]
 
-//blankline
+//clearpage
 必要なものがダウンロードされます。
-//image[androidStudio09][Android Stuidoセットアップ][scale=0.7]
+//image[androidStudio09][Android Stuidoセットアップ][scale=0.7, pos=H]
 
 //blankline
 セットアップ完了です。
-//image[androidStudio10][Android Stuidoセットアップ][scale=0.7]
+//image[androidStudio10][Android Stuidoセットアップ][scale=0.7, pos=H]
 
 
 == flutter doctorの確認
@@ -71,7 +72,7 @@ Launchpadなどからインストールした「Android Studio」を開きます
 Android studioのインストールが完了しましたので、「flutter doctor -v」で確認します。
 
 //terminal[][flutter doctort -v]{
-  ❯ flutter doctor -v
+  > flutter doctor -v
   [✓] Flutter (Channel stable, 3.0.5, on macOS 12.5 21G72 darwin-arm, locale en-CA)
       • Flutter version 3.0.5 at /Users/ユーザー名/.asdf/installs/flutter/3.0.5-stable
       • Upstream repository [https://github.com/flutter/flutter.git](https://github.com/flutter/flutter.git)
@@ -82,10 +83,10 @@ Android studioのインストールが完了しましたので、「flutter doct
 
   [!] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
       • Android SDK at /Users/ユーザー名/Library/Android/sdk
-      ✗ cmdline-tools component is missing
+      x cmdline-tools component is missing
       Run `path/to/sdkmanager --install "cmdline-tools;latest"`
       See [https://developer.android.com/studio/command-line](https://developer.android.com/studio/command-line) for more details.
-      ✗ Android license status unknown.
+      x Android license status unknown.
       Run `flutter doctor --android-licenses` to accept the SDK licenses.
       See [https://flutter.dev/docs/get-started/install/macos#android-setup](https://flutter.dev/docs/get-started/install/macos#android-setup) for more details.
 
@@ -99,9 +100,9 @@ Android studioのインストールが完了しましたので、「flutter doct
   [✓] Android Studio (version 2021.2)
       • Android Studio at /Applications/Android Studio.app/Contents
       • Flutter plugin can be installed from:
-      🔨 [https://plugins.jetbrains.com/plugin/9212-flutter](https://plugins.jetbrains.com/plugin/9212-flutter)
+      - [https://plugins.jetbrains.com/plugin/9212-flutter](https://plugins.jetbrains.com/plugin/9212-flutter)
       • Dart plugin can be installed from:
-      🔨 [https://plugins.jetbrains.com/plugin/6351-dart](https://plugins.jetbrains.com/plugin/6351-dart)
+      - [https://plugins.jetbrains.com/plugin/6351-dart](https://plugins.jetbrains.com/plugin/6351-dart)
       • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
 
   [✓] VS Code (version 1.70.1)
@@ -125,4 +126,5 @@ Android Studio欄の問題が解消されました。残りは、
 
 と、2つ残されています。
 
+//blankline
 それでは、「cmdline-tools」をインストールします。

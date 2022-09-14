@@ -5,6 +5,7 @@
   本家サイトで紹介されている方法と少し違いますが、Flutterのアップデートなどに対応できるようにします。
 //}
 
+
 == 本家サイト
 
 @<href>{https://docs.flutter.dev/get-started/install/macos, 本家サイトのmaOS}向けのインストール方法とは少し違います。
@@ -15,5 +16,6 @@ Homebrewのインストール方法も解説し、Homebrewを使って必要な�
 //blankline
 手順は、以下のようになります。
 
+//image[0201][][scale=0.6, pos=H]
 
 //image[flutter_mac_inst][macOSへのFlutter開発環境の作成手順][scale=0.7]

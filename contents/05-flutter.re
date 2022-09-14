@@ -6,7 +6,9 @@
   また、2.x系の最新版もインストールし、バージョンを切り替えて使えることを確認します。
 //}
 
+//makechaptitlepage[toc=on]
 
+== Flutterのインストール
 Flutterは、バージョンの切替ができるようにasdf経由でインストールします。先ほどインストール可能なバージョンを
 確認したところ最新版は「3.0.5-stable」でしたので、このバージョンを指定してインストールします。
 
@@ -27,7 +29,7 @@ Flutterは、バージョンの切替ができるようにasdf経由でインス
 //blankline
 「jq: command not found」と表示されエラーとなりました。
 
-//blankline
+== jqのインストール
 「jq」は何かを調べると、「Lightweight and flexible command-line JSON processor」とあり、
 インストール先のシステムが「intel chip」、「Apple Silicon」で処理を分ける処理で使われていました。
 
@@ -38,14 +40,16 @@ Flutterは、バージョンの切替ができるようにasdf経由でインス
  > brew install jq
 //}
 
-//blankline
+//clearpage
+
+== 改めてFlutterのインストール
 jqのインストールが完了しましたら、再度Flutter最新版のインストールを行います。
 
 //terminal[][Flutter最新版のインストール]{
  > asdf install flutter 3.0.5-stable
-% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-Dload  Upload   Total   Spent    Left  Speed
-100 1188M  100 1188M    0     0  38.7M      0  0:00:30  0:00:30 --:--:-- 41.1M
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+Dload  Upload   Total   Spent    Left  Speed
+100 1188M  100 1188M    0     0  38.7M      0  0:00:30  0:00:30 --:--:-- 41.1M
 //}
 
 最新版（3.0.5-stable）のインストールが完了しました。インストール完了の確認のため、インストールしたバージョンを確認します。
@@ -68,9 +72,9 @@ Dload  Upload   Total   Spent    Left  Speed
 
 //terminal[][Flutter 2.x系のインストール]{
  > asdf install flutter 2.10.5-stable
- % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
- Dload  Upload   Total   Spent    Left  Speed
- 100 1126M  100 1126M    0     0  30.3M      0  0:00:37  0:00:37 --:--:-- 28.7M
+ % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+ Dload  Upload   Total   Spent    Left  Speed
+ 100 1126M  100 1126M    0     0  30.3M      0  0:00:37  0:00:37 --:--:-- 28.7M
 //}
 
 //blankline
@@ -87,7 +91,7 @@ Dload  Upload   Total   Spent    Left  Speed
 //blankline
 今回も設定ファイルにバージョンを追加しなさいと怒られました。
 
-//blankline
+== PC全体、フォルダ毎のバージョン切替
 PC全体で最新版が使えるように設定します。
 
 ターミナルに「asdf global flutter 3.0.5-stable」と入力しエンターキーを押します。その後、バージョン確認も行います。
@@ -100,32 +104,32 @@ PC全体で最新版が使えるように設定します。
  Engine • revision e85ea0e79c
  Tools • Dart 2.17.6 • DevTools 2.12.2
 
- ╔════════════════════════════════════════════════════════════════════════════╗
- ║                 Welcome to Flutter! - https://flutter.dev                  ║
- ║                                                                            ║
- ║ The Flutter tool uses Google Analytics to anonymously report feature usage ║
- ║ statistics and basic crash reports. This data is used to help improve      ║
- ║ Flutter tools over time.                                                   ║
- ║                                                                            ║
- ║ Flutter tool analytics are not sent on the very first run. To disable      ║
- ║ reporting, type 'flutter config --no-analytics'. To display the current    ║
- ║ setting, type 'flutter config'. If you opt out of analytics, an opt-out    ║
- ║ event will be sent, and then no further information will be sent by the    ║
- ║ Flutter tool.                                                              ║
- ║                                                                            ║
- ║ By downloading the Flutter SDK, you agree to the Google Terms of Service.  ║
- ║ Note: The Google Privacy Policy describes how data is handled in this      ║
- ║ service.                                                                   ║
- ║                                                                            ║
- ║ Moreover, Flutter includes the Dart SDK, which may send usage metrics and  ║
- ║ crash reports to Google.                                                   ║
- ║                                                                            ║
- ║ Read about data we send with crash reports:                                ║
- ║ https://flutter.dev/docs/reference/crash-reporting                         ║
- ║                                                                            ║
- ║ See Google's privacy policy:                                               ║
- ║ https://policies.google.com/privacy                                        ║
- ╚════════════════════════════════════════════════════════════════════════════╝
+ ------------------------------------------------------------------------------
+ |                 Welcome to Flutter! - https://flutter.dev                  |
+ |                                                                            |
+ | The Flutter tool uses Google Analytics to anonymously report feature usage |
+ | statistics and basic crash reports. This data is used to help improve      |
+ | Flutter tools over time.                                                   |
+ |                                                                            |
+ | Flutter tool analytics are not sent on the very first run. To disable      |
+ | reporting, type 'flutter config --no-analytics'. To display the current    |
+ | setting, type 'flutter config'. If you opt out of analytics, an opt-out    |
+ | event will be sent, and then no further information will be sent by the    |
+ | Flutter tool.                                                              |
+ |                                                                            |
+ | By downloading the Flutter SDK, you agree to the Google Terms of Service.  |
+ | Note: The Google Privacy Policy describes how data is handled in this      |
+ | service.                                                                   |
+ |                                                                            |
+ | Moreover, Flutter includes the Dart SDK, which may send usage metrics and  |
+ | crash reports to Google.                                                   |
+ |                                                                            |
+ | Read about data we send with crash reports:                                |
+ | https://flutter.dev/docs/reference/crash-reporting                         |
+ |                                                                            |
+ | See Google's privacy policy:                                               |
+ | https://policies.google.com/privacy                                        |
+ ------------------------------------------------------------------------------
 //}
 
 asdfコマンドで「global」指定をしたので、PCのどのフォルダでも「3.0.5-stable」が使われます。
@@ -133,19 +137,18 @@ asdfコマンドで「global」指定をしたので、PCのどのフォルダ�
 「global」の代わりにプロジェクトフォルダへ移動し「asdf local flutter使用するバージョン」を
 ターミナルに入力しエンターキーを押します。
 
-//blankline
+//clearpage
 全体を「2.10.5-stable」に切り替えて確認します。
 
 //terminal[][Flutter 2.10.5-stableへ切替]{
  > asdf local flutter 2.10.5-stable
 
  > flutter --version @<balloon>{バージョン確認}
-╔════════════════════════════════════════════════════════════════════════════╗
-║ A new version of Flutter is available!                                     ║
-║                                                                            ║
-║ To update to the latest version, run "flutter upgrade".                    ║
-╚════════════════════════════════════════════════════════════════════════════╝
-
+ -----------------------------------------------------------------------------
+| A new version of Flutter is available!                                     |
+|                                                                            |
+| To update to the latest version, run "flutter upgrade".                    |
+ ----------------------------------------------------------------------------
 
 Flutter 2.10.5 • channel stable • https://github.com/flutter/flutter.git
 Framework • revision 5464c5bac7 (4 months ago) • 2022-04-18 09:55:37 -0700
@@ -153,7 +156,6 @@ Engine • revision 57d3bac3dd
 Tools • Dart 2.16.2 • DevTools 2.9.2
 //}
 
-//blankline
 バージョンが「2.10.5」と表示され、新しいバージョンがあることも表示しています。
 
 //blankline
@@ -168,20 +170,30 @@ Tools • Dart 2.16.2 • DevTools 2.9.2
  Tools • Dart 2.17.6 • DevTools 2.12.2
 //}
 
-//blankline
+//clearpage
+
 複数のFlutterバージョンをインストールしましたが、いったいどこのフォルダへ、どのようにインストールされているのでしょうか？
 Finderで確認すると、以下のようにインストールされています。
 
-//image[asdf02][flutterの複数バージョンのインストール状況][scale=0.7]
+//image[asdf02][flutterの複数バージョンのインストール状況][scale=1.0, pos=H]
 
 //blankline
-flutterをインストールできましたので、flutter開発環境の内容を、flutterコマンドで確認します。
+flutterをインストールできましたので、開発環境がどこまで出来上がっているのか確認します。
+
+//blankline
 ターミナルに「flutter doctor」と入力しエンターキーを押すのですが、より詳しく表示されるように「-v」オプションを
 付けて確認してみます。
 
+//blankline
+「flutter doctor」コマンドは、自分のPCでのFlutter開発環境を分析・表示してくれるコマンドです。
+
+//blankline
+開発中に何かエラーが発生した場合、「flutter doctor」の結果も合わせて伝えると、的確な回答を得られやすくなります。
+
+//clearpage
 //terminal[][flutter doctor -v]{
  > flutter doctor -v
- Running "flutter pub get" in flutter_tools...                       5.1s
+ Running "flutter pub get" in flutter_tools...                       5.1s
  [✓] Flutter (Channel stable, 3.0.5, on macOS 12.5 21G72 darwin-arm, locale en-CA)
      • Flutter version 3.0.5 at /Users/ユーザー名/.asdf/installs/flutter/3.0.5-stable
      • Upstream repository https://github.com/flutter/flutter.git
@@ -190,22 +202,22 @@ flutterをインストールできましたので、flutter開発環境の内容
      • Dart version 2.17.6
      • DevTools version 2.12.2
 
- [✗] Android toolchain - develop for Android devices
-     ✗ Unable to locate Android SDK.
+ [x] Android toolchain - develop for Android devices
+     x Unable to locate Android SDK.
      Install Android Studio from: https://developer.android.com/studio/index.html
      On first launch it will assist you in installing the Android SDK components.
      (or visit https://flutter.dev/docs/get-started/install/macos#android-setup for detailed instructions).
      If the Android SDK has been installed to a custom location, please use
      `flutter config --android-sdk` to update to that location.
 
- [✗] Xcode - develop for iOS and macOS
-     ✗ Xcode installation is incomplete; a full installation is necessary for iOS development.
+ [x] Xcode - develop for iOS and macOS
+     x Xcode installation is incomplete; a full installation is necessary for iOS development.
      Download at: https://developer.apple.com/xcode/download/
      Or install Xcode via the App Store.
      Once installed, run:
      sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
      sudo xcodebuild -runFirstLaunch
-     ✗ CocoaPods not installed.
+     x CocoaPods not installed.
      CocoaPods is used to retrieve the iOS and macOS platform side's plugin code that responds to your plugin usage on the Dart side.
      Without CocoaPods, plugins will not work on iOS or macOS.
      For more info, see https://flutter.dev/platform-plugins
@@ -219,8 +231,8 @@ flutterをインストールできましたので、flutter開発環境の内容
     (or visit https://flutter.dev/docs/get-started/install/macos#android-setup for detailed instructions).
 
  [✓] Connected device (2 available)
-     • macOS (desktop) • macos  • darwin-arm64   • macOS 12.5 21G72 darwin-arm
-     • Chrome (web)    • chrome • web-javascript • Google Chrome 104.0.5112.79
+     • macOS (desktop) • macos  • darwin-arm64   • macOS 12.5 21G72 darwin-arm
+     • Chrome (web)    • chrome • web-javascript • Google Chrome 104.0.5112.79
 
  [✓] HTTP Host Availability
      • All required HTTP hosts are available
@@ -228,7 +240,8 @@ flutterをインストールできましたので、flutter開発環境の内容
  ! Doctor found issues in 3 categories.
 //}
 
-//blankline
+
+//clearpage
 現時点では、3つのカテゴリに問題があると表示されています。内容は、バツが付いているものです。
 
  1. Android toolchain
